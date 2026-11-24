@@ -1,0 +1,23 @@
+E-FUSION LANGUAGE THEORY NOTES UPDATE
+
+Where to find the notes:
+Frontend > src > pages > LanguageNotes.jsx
+Website: Language Practice > Topic Notes
+
+The notes view now includes 21 topic chapters grouped into four units. Select C, C++, Java, Python, or JavaScript to see the syntax example for the same programming concept. Each chapter includes:
+- Definition
+- Detailed explanation
+- Important points
+- Language-specific code example
+- Expected output/result
+
+Topics include program structure, variables, data types, input/output, operators, conditions, switch/match, loops, arrays/lists, strings, functions, recursion, pointers/references, structures/classes/objects, dynamic memory, searching/sorting, OOP principles, constructors, exception handling, file handling, and collections.
+
+Pointer note: C and C++ examples show actual pointers. Java, Python, and JavaScript examples explain object references because these languages do not expose raw pointers/pointer arithmetic in normal application code.
+
+The notes are general learning material and should be checked against the teacher's official unit-wise syllabus for exact exam coverage.
+
+Setup reminder:
+- Do not include or share your .env files in ZIPs.
+- Keep your local fusion-backend/.env with MONGO_URI and JWT_SECRET.
+- Set fusion-frontend/.env.local to REACT_APP_API_URL=http://localhost:5001 for local development.

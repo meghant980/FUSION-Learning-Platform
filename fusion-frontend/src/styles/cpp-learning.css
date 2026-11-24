@@ -1,0 +1,811 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   FUSION - C++ LEARNING PAGE
+   Forest Green / Sage / Off-white Theme
+========================================= */
+
+.cpplearn-page {
+  min-height: 100vh;
+  background: #f7f7f3;
+  color: #183c35;
+  font-family: "DM Sans", sans-serif;
+  padding: 0 7%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.cpplearn-page *,
+.cpplearn-page *::before,
+.cpplearn-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.cpplearn-topbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #e5e9e1;
+}
+
+.cpplearn-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: none;
+  background: transparent;
+  color: #183c35;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.cpplearn-brand-mark {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #183c35;
+  color: #ffffff;
+  font-size: 19px;
+}
+
+.cpplearn-back {
+  border: 1px solid #dce3d9;
+  background: #ffffff;
+  color: #31564b;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font: 600 13px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cpplearn-back:hover {
+  background: #183c35;
+  color: #ffffff;
+  border-color: #183c35;
+  transform: translateY(-1px);
+}
+
+.cpplearn-back span {
+  margin-right: 7px;
+  font-size: 16px;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.cpplearn-hero {
+  min-height: 370px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 35px;
+  padding: 48px 0 35px;
+}
+
+.cpplearn-eyebrow,
+.cpplearn-section-kicker {
+  color: #748777;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.cpplearn-live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: #8a9b85;
+  vertical-align: 1px;
+}
+
+.cpplearn-hero h1 {
+  margin: 17px 0 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(52px, 7vw, 82px);
+  line-height: 1.08;
+  letter-spacing: -5px;
+  font-weight: 800;
+  color: #183c35;
+}
+
+.cpplearn-hero h1 span {
+  color: #82977c;
+}
+
+.cpplearn-hero-description {
+  max-width: 490px;
+  color: #68796f;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =========================================
+   HERO ACTIONS
+========================================= */
+
+.cpplearn-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 27px;
+}
+
+.cpplearn-primary-btn {
+  min-height: 46px;
+  border: 1px solid #183c35;
+  border-radius: 7px;
+  padding: 14px 20px;
+  background: #183c35;
+  color: #ffffff;
+  font: 700 13px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.cpplearn-primary-btn:hover {
+  background: #28584a;
+  border-color: #28584a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(24, 60, 53, 0.12);
+}
+
+.cpplearn-primary-btn span {
+  margin-left: 12px;
+  font-size: 16px;
+}
+
+.cpplearn-hero-note {
+  color: #849187;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CODE ILLUSTRATION
+========================================= */
+
+.cpplearn-code-art {
+  min-height: 280px;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cpplearn-code-window {
+  width: min(100%, 390px);
+  position: relative;
+  z-index: 2;
+  background: #172c28;
+  border: 1px solid #29473d;
+  border-radius: 12px;
+  box-shadow: 0 22px 55px rgba(24, 60, 53, 0.18);
+  overflow: hidden;
+  transform: rotate(-2deg);
+}
+
+.cpplearn-window-top {
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 17px;
+  border-bottom: 1px solid #30443c;
+  color: #a8b8ad;
+  font-size: 11px;
+}
+
+.cpplearn-window-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.cpplearn-window-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #738d79;
+}
+
+.cpplearn-window-dots i:first-child {
+  background: #b8c9b6;
+}
+
+.cpplearn-window-dots i:nth-child(2) {
+  background: #829680;
+}
+
+.cpplearn-code-content {
+  padding: 19px 18px;
+  overflow-x: auto;
+  color: #e3e9df;
+  font: 11px/2.05 "SFMono-Regular", Consolas, monospace;
+  white-space: nowrap;
+}
+
+.cpplearn-line {
+  display: inline-block;
+  width: 32px;
+  color: #81978a;
+  user-select: none;
+}
+
+.cpplearn-purple {
+  color: #b8c9b6;
+}
+
+.cpplearn-green {
+  color: #9dc7a4;
+}
+
+.cpplearn-yellow {
+  color: #dfc58a;
+}
+
+.cpplearn-code-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 17px;
+  border-top: 1px solid #30443c;
+  color: #8fa697;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.cpplearn-code-footer i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #9dc7a4;
+}
+
+/* =========================================
+   CODE ART DECORATION
+========================================= */
+
+.cpplearn-art-orbit {
+  position: absolute;
+  border: 1px solid #dce5d8;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cpplearn-orbit-one {
+  width: 320px;
+  height: 320px;
+}
+
+.cpplearn-orbit-two {
+  width: 250px;
+  height: 250px;
+  border-color: #e5e9e1;
+}
+
+.cpplearn-floating-tag {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  z-index: 3;
+  padding: 10px 13px;
+  border: 1px solid #e1e7dd;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #53715d;
+  box-shadow: 0 8px 22px rgba(24, 60, 53, 0.07);
+  font: 11px "SFMono-Regular", Consolas, monospace;
+}
+
+/* =========================================
+   COURSE OVERVIEW
+========================================= */
+
+.cpplearn-overview {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 22px 28px;
+  background: #eef1e9;
+  border: 1px solid #e5e9df;
+  border-radius: 9px;
+}
+
+.cpplearn-overview-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cpplearn-overview-number {
+  color: #23483c;
+  font: 800 23px "Manrope", sans-serif;
+}
+
+.cpplearn-overview-label {
+  color: #7b897e;
+  font-size: 11px;
+}
+
+.cpplearn-overview-divider {
+  height: 39px;
+  width: 1px;
+  flex-shrink: 0;
+  background: #d7dfd3;
+}
+
+/* =========================================
+   UNIT SECTION
+========================================= */
+
+.cpplearn-units-section {
+  padding: 64px 0 55px;
+}
+
+.cpplearn-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.cpplearn-section-heading h2 {
+  margin: 9px 0 7px;
+  color: #183c35;
+  font: 800 31px "Manrope", sans-serif;
+  letter-spacing: -1px;
+}
+
+.cpplearn-section-heading h2 span {
+  color: #82977c;
+}
+
+.cpplearn-section-heading p {
+  margin: 0;
+  color: #849087;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.cpplearn-unit-count {
+  flex-shrink: 0;
+  color: #8a9b85;
+  font: 700 12px "DM Sans", sans-serif;
+  letter-spacing: 2px;
+  padding-bottom: 5px;
+}
+
+/* =========================================
+   UNIT GRID
+========================================= */
+
+.cpplearn-unit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+/* =========================================
+   UNIT CARDS
+========================================= */
+
+.cpplearn-unit-card {
+  min-width: 0;
+  min-height: 245px;
+  padding: 23px 24px 19px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #e4e8df;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #183c35;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease,
+    border-color 0.22s ease, background 0.22s ease;
+}
+
+.cpplearn-unit-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9b9a3;
+  background: #fcfdfa;
+  box-shadow: 0 14px 30px rgba(24, 60, 53, 0.08);
+}
+
+.cpplearn-unit-card:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.5);
+  outline-offset: 3px;
+}
+
+.cpplearn-unit-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cpplearn-unit-number {
+  color: #91a28a;
+  font: 800 13px "Manrope", sans-serif;
+  letter-spacing: 1px;
+}
+
+.cpplearn-unit-arrow {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f0f3ed;
+  color: #31594b;
+  font-size: 15px;
+  transition: background 0.2s ease, color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cpplearn-unit-card:hover .cpplearn-unit-arrow {
+  background: #183c35;
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+/* =========================================
+   UNIT CARD CONTENT
+========================================= */
+
+.cpplearn-unit-card-body {
+  min-width: 0;
+}
+
+.cpplearn-unit-card-body h3 {
+  margin: 18px 0 8px;
+  color: #24483d;
+  font: 700 17px "Manrope", sans-serif;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.cpplearn-unit-card-body p {
+  max-width: 440px;
+  min-height: 40px;
+  margin: 0;
+  color: #849087;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   UNIT TOPIC TAGS
+========================================= */
+
+.cpplearn-topic-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.cpplearn-topic-list span {
+  padding: 6px 9px;
+  border-radius: 5px;
+  background: #f1f4ee;
+  color: #64796b;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* =========================================
+   UNIT CARD FOOTER
+========================================= */
+
+.cpplearn-card-bottom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  color: #31594b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cpplearn-card-line {
+  height: 1px;
+  flex: 1;
+  background: #e8ece5;
+  transition: background 0.2s ease;
+}
+
+.cpplearn-unit-card:hover .cpplearn-card-line {
+  background: #9aab93;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.cpplearn-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 19px 0 25px;
+  border-top: 1px solid #e5e9e1;
+  color: #8a978b;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.cpplearn-footer > span:first-child {
+  color: #496456;
+  font-weight: 800;
+}
+
+.cpplearn-footer-dot {
+  padding: 0 5px;
+  color: #9aab93;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+  .cpplearn-page {
+    padding: 0 5%;
+  }
+
+  .cpplearn-hero {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding-top: 40px;
+  }
+
+  .cpplearn-code-art {
+    min-height: 260px;
+  }
+
+  .cpplearn-overview {
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .cpplearn-unit-grid {
+    gap: 15px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 760px) {
+  .cpplearn-unit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cpplearn-unit-card {
+    min-height: 220px;
+  }
+
+  .cpplearn-overview {
+    padding: 18px 15px;
+  }
+
+  .cpplearn-overview-number {
+    font-size: 19px;
+  }
+
+  .cpplearn-overview-label {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cpplearn-topbar {
+    min-height: 70px;
+  }
+
+  .cpplearn-brand {
+    font-size: 16px;
+    gap: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .cpplearn-brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+  .cpplearn-back {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .cpplearn-hero {
+    min-height: auto;
+    padding: 40px 0 25px;
+  }
+
+  .cpplearn-hero h1 {
+    font-size: 57px;
+    letter-spacing: -3px;
+  }
+
+  .cpplearn-hero-description {
+    font-size: 14px;
+  }
+
+  .cpplearn-code-art {
+    min-height: 235px;
+  }
+
+  .cpplearn-code-window {
+    width: min(100%, 360px);
+  }
+
+  .cpplearn-orbit-one {
+    width: 270px;
+    height: 270px;
+  }
+
+  .cpplearn-orbit-two {
+    width: 210px;
+    height: 210px;
+  }
+
+  .cpplearn-floating-tag {
+    right: 0;
+    bottom: 8px;
+  }
+
+  .cpplearn-overview {
+    gap: 14px;
+    padding: 17px 13px;
+  }
+
+  .cpplearn-overview-number {
+    font-size: 18px;
+  }
+
+  .cpplearn-overview-label {
+    font-size: 9px;
+  }
+
+  .cpplearn-overview-divider {
+    height: 32px;
+  }
+
+  .cpplearn-units-section {
+    padding: 45px 0;
+  }
+
+  .cpplearn-section-heading h2 {
+    font-size: 26px;
+  }
+
+  .cpplearn-section-heading p {
+    font-size: 12px;
+  }
+
+  .cpplearn-unit-count {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .cpplearn-unit-card {
+    min-height: 225px;
+    padding: 20px;
+  }
+
+  .cpplearn-unit-card-body h3 {
+    font-size: 16px;
+  }
+
+  .cpplearn-footer {
+    flex-direction: column;
+    padding: 19px 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 430px) {
+  .cpplearn-hero h1 {
+    font-size: 49px;
+    letter-spacing: -3px;
+  }
+
+  .cpplearn-hero-actions {
+    gap: 12px;
+  }
+
+  .cpplearn-overview {
+    gap: 10px;
+  }
+
+  .cpplearn-overview-divider {
+    height: 30px;
+  }
+
+  .cpplearn-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cpplearn-section-heading h2 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cpplearn-page {
+    padding: 0 4%;
+  }
+
+  .cpplearn-brand {
+    font-size: 14px;
+  }
+
+  .cpplearn-back {
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .cpplearn-hero h1 {
+    font-size: 43px;
+  }
+
+  .cpplearn-overview {
+    gap: 8px;
+    padding: 14px 9px;
+  }
+
+  .cpplearn-overview-number {
+    font-size: 16px;
+  }
+
+  .cpplearn-overview-label {
+    font-size: 8px;
+  }
+
+  .cpplearn-unit-card {
+    padding: 17px;
+  }
+
+  .cpplearn-code-content {
+    padding: 16px 12px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,81 @@
+
+/* FUSION login account selection */
+
+.fusion-login-account-types {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.fusion-login-type {
+  width: 100%;
+  min-width: 0;
+  min-height: 82px;
+  padding: 11px 8px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow: hidden;
+}
+
+.fusion-login-type-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+}
+
+.fusion-login-type strong {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.fusion-login-type small {
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.fusion-login-type-arrow {
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.fusion-login-type-admin {
+  grid-column: auto;
+  border-color: #dfe6dc;
+}
+
+/* Tablet and mobile */
+@media (max-width: 500px) {
+  .fusion-login-account-types {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .fusion-login-type {
+    padding: 10px 5px;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 85px;
+  }
+
+  .fusion-login-type-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .fusion-login-type-arrow {
+    display: none;
+  }
+
+  .fusion-login-type strong {
+    font-size: 11px;
+  }
+
+  .fusion-login-type small {
+    font-size: 8px;
+    white-space: normal;
+  }
+}

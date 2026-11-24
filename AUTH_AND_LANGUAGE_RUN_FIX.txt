@@ -1,0 +1,47 @@
+E-FUSION - AUTHENTICATED CODE RUN FIX
+====================================
+
+This update fixes the frontend request headers for protected code execution.
+The backend route /api/coding/run uses the protect middleware, so a valid JWT
+must be sent as:
+  Authorization: Bearer <token>
+
+Updated frontend coding pages:
+- C Unit 1, 2, 3 and 4
+- C++ Unit 1, 2, 3 and 4 (where the shared C/C++ unit pages are used)
+- Python unit coding page (unit selected by route)
+- Java unit coding page (unit selected by route)
+- JavaScript unit coding page (unit selected by route)
+- Java module and additional-language coding workspace
+- Legacy C Unit 2 coding-question page
+
+The token is read automatically from localStorage keys token/authToken/jwtToken
+or from fusionUser.token / fusionUser.accessToken. Login.js already stores the
+JWT returned by the local backend. Students should not manually enter a token.
+
+LOCAL SETUP
+-----------
+1. Keep your existing fusion-backend/.env. It must contain your local values,
+   including MONGO_URI and JWT_SECRET. Do not share this file publicly.
+2. Create/keep fusion-frontend/.env.local with:
+     REACT_APP_API_URL=http://localhost:5001
+3. In fusion-backend terminal:
+     npm install
+     npm run dev
+4. In a separate terminal, from fusion-frontend:
+     npm install
+     npm start
+5. Open http://localhost:3000 and sign in again. A token from a previous
+   backend/secret may be invalid, so sign out and sign in after starting the
+   local backend.
+
+IMPORTANT
+---------
+- The 200 seeded practice questions remain in MongoDB; do not seed them again
+  unless you intentionally reset/refresh the practice bank.
+- This update attaches JWT headers to protected run requests. It does not
+  bypass backend authentication.
+- Code execution still depends on the configured Judge0 service and internet
+  availability.
+- This archive has not been runtime-tested against your local MongoDB/Judge0
+  setup. After replacing files, test one question per language and unit.

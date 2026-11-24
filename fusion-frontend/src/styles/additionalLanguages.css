@@ -1,0 +1,914 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   FUSION - ADDITIONAL LANGUAGE LEARNING
+   Python and JavaScript learning pages
+   Forest Green / Sage / Off-white Theme
+========================================= */
+
+.additional-page {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 28px clamp(18px, 5vw, 76px) 55px;
+  background: #f7f7f3;
+  color: #203a32;
+  font-family: "DM Sans", "Manrope", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.additional-page *,
+.additional-page *::before,
+.additional-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   COURSE HEADER
+========================================= */
+
+.additional-header {
+  position: relative;
+  overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto 24px;
+  padding: 38px 42px 30px;
+  border: 1px solid rgba(24, 60, 53, 0.08);
+  border-radius: 16px;
+  background: #183c35;
+  color: #ffffff;
+  box-shadow: 0 14px 35px rgba(24, 60, 53, 0.09);
+}
+
+.additional-header::before {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  right: -100px;
+  top: -210px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px rgba(255, 255, 255, 0.025),
+    0 0 0 75px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
+
+.additional-back {
+  position: relative;
+  z-index: 1;
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.additional-back:hover {
+  background: rgba(255, 255, 255, 0.17);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   COURSE TITLE AND LANGUAGE ICON
+========================================= */
+
+.additional-course-heading {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 34px;
+}
+
+.additional-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.10);
+  font-size: 38px;
+}
+
+.additional-label {
+  display: inline-block;
+  color: #a9c1ad;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.5;
+}
+
+.additional-course-heading h1 {
+  margin: 8px 0 7px;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(27px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+.additional-course-heading p {
+  margin: 0;
+  color: #c3d2ca;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   COURSE INFORMATION TAGS
+========================================= */
+
+.additional-course-info {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.additional-course-info span {
+  padding: 9px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e2ebe5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================
+   STICKY LEARNING TABS
+========================================= */
+
+.additional-tabs {
+  position: sticky;
+  top: 10px;
+  z-index: 20;
+  display: flex;
+  gap: 5px;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto 28px;
+  padding: 6px;
+  overflow-x: auto;
+  border: 1px solid #e4e7df;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 5px 18px rgba(29, 55, 45, 0.05);
+  backdrop-filter: blur(12px);
+  scrollbar-width: thin;
+}
+
+.additional-tabs button {
+  flex-shrink: 0;
+  min-height: 39px;
+  padding: 11px 23px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #68766e;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.additional-tabs button:hover {
+  background: #f1f4ef;
+  color: #214d40;
+}
+
+.additional-tabs button.selected {
+  background: #214d40;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(33, 77, 64, 0.16);
+}
+
+/* =========================================
+   LEARNING LAYOUT
+========================================= */
+
+.additional-layout {
+  display: grid;
+  grid-template-columns: 285px minmax(0, 1fr);
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* =========================================
+   TOPIC SIDEBAR
+========================================= */
+
+.additional-topics,
+.additional-lesson {
+  min-width: 0;
+  border: 1px solid #e6e9e1;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(29, 55, 45, 0.035);
+}
+
+.additional-topics {
+  position: sticky;
+  top: 85px;
+  overflow: hidden;
+}
+
+.additional-sidebar-heading {
+  padding: 23px 21px 18px;
+  border-bottom: 1px solid #edf0e9;
+}
+
+.additional-sidebar-heading .additional-label {
+  color: #829783;
+}
+
+.additional-sidebar-heading h2 {
+  margin: 7px 0 5px;
+  color: #203a32;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.additional-sidebar-heading p {
+  margin: 0;
+  color: #879189;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.additional-topic-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.additional-topic-list button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 13px 12px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  color: #596960;
+  text-align: left;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.additional-topic-list button:hover {
+  background: #f3f6f1;
+  color: #214d40;
+}
+
+.additional-topic-list button.active {
+  background: #eaf1e9;
+  color: #214d40;
+}
+
+.additional-topic-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+  border: 1px solid #e4e9e0;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #819181;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.additional-topic-list button.active .additional-topic-number {
+  border-color: #214d40;
+  background: #214d40;
+  color: #ffffff;
+}
+
+/* =========================================
+   LESSON PANEL
+========================================= */
+
+.additional-lesson {
+  padding: clamp(23px, 4vw, 42px);
+}
+
+.additional-lesson-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #edf0e9;
+}
+
+.additional-lesson-top .additional-label {
+  color: #829783;
+}
+
+.additional-lesson-count {
+  color: #89958c;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.additional-lesson h2 {
+  margin: 28px 0 13px;
+  color: #203a32;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.3;
+}
+
+.additional-lesson-description {
+  max-width: 850px;
+  margin: 0 0 27px;
+  color: #66756c;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   CODE AND OUTPUT PANELS
+========================================= */
+
+.additional-code-panel {
+  min-width: 0;
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px solid #263e37;
+  border-radius: 10px;
+  background: #172b27;
+}
+
+.additional-code-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 17px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: #203a32;
+  color: #b8c9bd;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.additional-code-language {
+  color: #9eb9a5;
+  letter-spacing: 0.2px;
+}
+
+.additional-code {
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 21px;
+  overflow-x: auto;
+  color: #e3ece4;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+  line-height: 1.85;
+  white-space: pre;
+  tab-size: 4;
+}
+
+.additional-output-panel {
+  border-color: #dce7dc;
+  background: #f3f7f1;
+}
+
+.additional-output-panel .additional-code-heading {
+  border-bottom: 1px solid #e0e9df;
+  background: #e9f0e7;
+  color: #54715b;
+}
+
+.additional-output-panel .additional-code {
+  color: #31513d;
+}
+
+/* =========================================
+   PREVIOUS AND NEXT LESSON BUTTONS
+========================================= */
+
+.additional-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #edf0e9;
+}
+
+.additional-navigation button {
+  min-height: 42px;
+  padding: 12px 19px;
+  border: 1px solid #dce5dc;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #315346;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.additional-navigation button:last-child {
+  border-color: #214d40;
+  background: #214d40;
+  color: #ffffff;
+}
+
+.additional-navigation button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(33, 77, 64, 0.12);
+}
+
+.additional-navigation button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   EXAMPLES SECTION
+========================================= */
+
+.additional-examples,
+.additional-quiz {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.additional-section-heading {
+  margin: 0 0 25px;
+  padding: 27px 30px;
+  border: 1px solid #e5e9e1;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.additional-section-heading .additional-label {
+  color: #829783;
+}
+
+.additional-section-heading h2 {
+  margin: 9px 0 7px;
+  color: #203a32;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(24px, 3vw, 31px);
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.additional-section-heading p {
+  margin: 0;
+  color: #78847b;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   EXAMPLE CARDS
+========================================= */
+
+.additional-example {
+  margin-bottom: 18px;
+  padding: 25px;
+  border: 1px solid #e5e9e1;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(29, 55, 45, 0.025);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.additional-example:hover {
+  border-color: #c5d4c1;
+  box-shadow: 0 8px 20px rgba(29, 55, 45, 0.05);
+}
+
+.additional-example-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.additional-example-title > span,
+.additional-question h3 > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #eaf1e9;
+  color: #315c48;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.additional-example-title h3 {
+  margin: 0;
+  color: #263f35;
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.additional-example > p {
+  margin: 13px 0 17px;
+  color: #738078;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   QUIZ SECTION
+========================================= */
+
+.additional-question {
+  margin-bottom: 16px;
+  padding: 23px 25px;
+  border: 1px solid #e5e9e1;
+  border-radius: 11px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.additional-question:hover {
+  border-color: #c5d4c1;
+  box-shadow: 0 5px 16px rgba(29, 55, 45, 0.035);
+}
+
+.additional-question h3 {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin: 0 0 19px;
+  color: #263f35;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.additional-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+/* =========================================
+   QUIZ OPTIONS
+========================================= */
+
+.additional-option {
+  min-width: 0;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 13px;
+  border: 1px solid #e6eae3;
+  border-radius: 7px;
+  background: #fafbf8;
+  color: #5d6d62;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.additional-option:hover {
+  border-color: #a9bba8;
+  background: #f3f7f1;
+}
+
+.additional-option.chosen {
+  border-color: #668b70;
+  background: #edf4eb;
+  color: #214d40;
+}
+
+.additional-option input {
+  flex-shrink: 0;
+  accent-color: #214d40;
+  cursor: pointer;
+}
+
+.additional-option input:disabled {
+  cursor: default;
+}
+
+/* =========================================
+   QUIZ FEEDBACK
+========================================= */
+
+.correct-answer,
+.wrong-answer {
+  margin: 13px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.correct-answer {
+  color: #39764b;
+}
+
+.wrong-answer {
+  color: #a94c43;
+}
+
+/* =========================================
+   QUIZ SUBMIT BUTTON
+========================================= */
+
+.additional-submit {
+  min-width: 145px;
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  padding: 13px 22px;
+  border: 1px solid #214d40;
+  border-radius: 7px;
+  background: #214d40;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.additional-submit:hover {
+  background: #183c35;
+  border-color: #183c35;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 13px rgba(33, 77, 64, 0.15);
+}
+
+/* =========================================
+   QUIZ RESULT
+========================================= */
+
+.additional-result {
+  margin-top: 23px;
+  padding: 28px;
+  border: 1px solid #dce8da;
+  border-radius: 11px;
+  background: #edf4eb;
+}
+
+.additional-result .additional-label {
+  color: #65856b;
+}
+
+.additional-result h2 {
+  margin: 10px 0 5px;
+  color: #214d40;
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.additional-result p {
+  color: #627467;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.additional-page button:focus-visible,
+.additional-page a:focus-visible,
+.additional-page input:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.45);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+  .additional-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .additional-topics {
+    position: static;
+  }
+
+  .additional-topic-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+  .additional-page {
+    padding: 14px 12px 35px;
+  }
+
+  .additional-header {
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+
+  .additional-header::before {
+    width: 260px;
+    height: 260px;
+    right: -110px;
+    top: -155px;
+  }
+
+  .additional-course-heading {
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 27px;
+  }
+
+  .additional-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 27px;
+    border-radius: 11px;
+  }
+
+  .additional-course-heading h1 {
+    font-size: 25px;
+    letter-spacing: -0.5px;
+  }
+
+  .additional-course-heading p {
+    font-size: 12px;
+  }
+
+  .additional-course-info {
+    gap: 7px;
+    margin-top: 22px;
+  }
+
+  .additional-course-info span {
+    font-size: 10px;
+    padding: 8px 9px;
+  }
+
+  .additional-tabs {
+    top: 5px;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 17px;
+  }
+
+  .additional-tabs button {
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+
+  .additional-topic-list {
+    grid-template-columns: 1fr;
+  }
+
+  .additional-lesson {
+    padding: 21px 17px;
+  }
+
+  .additional-lesson h2 {
+    font-size: 25px;
+  }
+
+  .additional-lesson-description {
+    font-size: 13px;
+  }
+
+  .additional-code {
+    padding: 15px;
+    font-size: 11px;
+  }
+
+  .additional-navigation button {
+    padding: 11px 12px;
+    font-size: 11px;
+  }
+
+  .additional-section-heading,
+  .additional-example,
+  .additional-question {
+    padding: 19px 16px;
+  }
+
+  .additional-options {
+    grid-template-columns: 1fr;
+  }
+
+  .additional-result {
+    padding: 21px;
+  }
+}
+
+/* =========================================
+   EXTRA SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+  .additional-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .additional-header {
+    padding: 21px 15px;
+  }
+
+  .additional-course-heading {
+    gap: 10px;
+  }
+
+  .additional-course-heading h1 {
+    font-size: 22px;
+  }
+
+  .additional-icon {
+    width: 47px;
+    height: 47px;
+    font-size: 23px;
+  }
+
+  .additional-lesson {
+    padding: 17px 13px;
+  }
+
+  .additional-lesson h2 {
+    font-size: 22px;
+  }
+
+  .additional-navigation {
+    gap: 8px;
+  }
+
+  .additional-navigation button {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .additional-example-title h3 {
+    font-size: 15px;
+  }
+}

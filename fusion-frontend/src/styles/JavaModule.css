@@ -1,0 +1,1185 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   FUSION - JAVA LEARNING MODULE
+   Forest Green / Sage / Off-white Theme
+========================================= */
+
+.java-module {
+  min-height: 100vh;
+  padding: 0 7%;
+  background: #f7f7f3;
+  color: #183c35;
+  font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.java-module *,
+.java-module *::before,
+.java-module *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.java-topbar {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #e5e9e1;
+}
+
+.java-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: none;
+  background: transparent;
+  color: #183c35;
+  font: 800 19px "Manrope", sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.java-brand-mark {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #183c35;
+  color: #ffffff;
+  font-size: 19px;
+}
+
+.java-dashboard-btn {
+  padding: 10px 16px;
+  border: 1px solid #dce3d9;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #31564b;
+  font: 600 13px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, transform 0.2s ease;
+}
+
+.java-dashboard-btn:hover {
+  background: #183c35;
+  border-color: #183c35;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.java-hero {
+  min-height: 355px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 35px;
+  padding: 45px 0 35px;
+}
+
+.java-eyebrow,
+.java-section-kicker {
+  color: #748777;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.java-eyebrow i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background: #8a9b85;
+}
+
+.java-hero h1 {
+  margin: 17px 0 12px;
+  color: #183c35;
+  font: 800 clamp(52px, 7vw, 82px)/1.08 "Manrope", sans-serif;
+  letter-spacing: -5px;
+}
+
+.java-hero h1 span {
+  color: #82977c;
+}
+
+.java-hero-copy > p {
+  max-width: 490px;
+  color: #68796f;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.java-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  color: #849187;
+  font-size: 11px;
+}
+
+.java-meta-dot {
+  color: #9aab93;
+}
+
+/* =========================================
+   JAVA CODE ILLUSTRATION
+========================================= */
+
+.java-hero-art {
+  min-height: 275px;
+  min-width: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.java-code-window {
+  width: min(100%, 390px);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border: 1px solid #29473d;
+  border-radius: 12px;
+  background: #172c28;
+  box-shadow: 0 22px 55px rgba(24, 60, 53, 0.18);
+  transform: rotate(-2deg);
+}
+
+.java-code-window-top {
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 17px;
+  border-bottom: 1px solid #30443c;
+  color: #a8b8ad;
+  font-size: 11px;
+}
+
+.java-window-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.java-window-dots i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #738d79;
+}
+
+.java-window-dots i:first-child {
+  background: #b8c9b6;
+}
+
+.java-window-dots i:nth-child(2) {
+  background: #829680;
+}
+
+.java-hero-code {
+  margin: 0;
+  padding: 23px 18px;
+  overflow-x: auto;
+  color: #e3e9df;
+  font: 11px/2.1 "SFMono-Regular", Consolas, monospace;
+}
+
+.java-code-purple {
+  color: #b8c9b6;
+}
+
+.java-code-yellow {
+  color: #d4e0d8;
+}
+
+.java-code-window-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 17px;
+  border-top: 1px solid #30443c;
+  color: #8fa697;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.java-code-window-bottom i,
+.java-code-heading i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #9dc7a4;
+}
+
+.java-art-orbit {
+  position: absolute;
+  border: 1px solid #dce5d8;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.java-art-orbit-one {
+  width: 320px;
+  height: 320px;
+}
+
+.java-art-orbit-two {
+  width: 245px;
+  height: 245px;
+  border-color: #e5e9e1;
+}
+
+.java-floating-label {
+  position: absolute;
+  right: 0;
+  bottom: 17px;
+  z-index: 3;
+  padding: 10px 13px;
+  border: 1px solid #e1e7dd;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #53715d;
+  box-shadow: 0 8px 22px rgba(24, 60, 53, 0.07);
+  font-size: 10px;
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.java-stats {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  padding: 21px 28px;
+  border: 1px solid #e5e9df;
+  border-radius: 9px;
+  background: #eef1e9;
+}
+
+.java-stats > div:not(.java-stats-divider) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.java-stats strong {
+  color: #23483c;
+  font: 800 23px "Manrope", sans-serif;
+}
+
+.java-stats span {
+  color: #7b897e;
+  font-size: 11px;
+}
+
+.java-stats-divider {
+  width: 1px;
+  height: 38px;
+  flex-shrink: 0;
+  background: #d7dfd3;
+}
+
+/* =========================================
+   LEARNING AREA
+========================================= */
+
+.java-learning-area {
+  padding: 62px 0 55px;
+}
+
+.java-section-heading {
+  margin-bottom: 25px;
+}
+
+.java-section-heading h2,
+.java-quiz-intro h2,
+.java-examples-intro h2 {
+  margin: 9px 0 7px;
+  color: #183c35;
+  font: 800 31px "Manrope", sans-serif;
+  letter-spacing: -1px;
+}
+
+.java-section-heading h2 span,
+.java-quiz-intro h2 span {
+  color: #82977c;
+}
+
+.java-section-heading p,
+.java-examples-intro p,
+.java-quiz-intro > p {
+  margin: 0;
+  color: #849087;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   LEARNING NAVIGATION
+========================================= */
+
+.java-navigation {
+  display: flex;
+  gap: 8px;
+  padding: 7px;
+  margin-bottom: 22px;
+  border: 1px solid #e5e9e1;
+  border-radius: 9px;
+  background: #eef1e9;
+}
+
+.java-navigation button {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #718176;
+  font: 700 13px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.java-navigation button span {
+  color: #9aa999;
+  font-size: 10px;
+}
+
+.java-navigation button:hover:not(.active) {
+  background: #f7f8f4;
+  color: #315b4b;
+}
+
+.java-navigation button.active {
+  background: #183c35;
+  color: #ffffff;
+  box-shadow: 0 3px 9px rgba(24, 60, 53, 0.12);
+}
+
+.java-navigation button.active span {
+  color: #b4c8b4;
+}
+
+/* =========================================
+   LESSON CONTENT LAYOUT
+========================================= */
+
+.java-content {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+
+/* =========================================
+   TOPIC SIDEBAR
+========================================= */
+
+.java-topic-list {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #e4e8df;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.java-sidebar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 5px 15px;
+  color: #819083;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.java-sidebar-heading strong {
+  color: #91a28a;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+.java-topic-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 9px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #617368;
+  text-align: left;
+  font: 600 11px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.java-topic-button:hover {
+  background: #f3f5f0;
+}
+
+.java-topic-button.active {
+  background: #eaf0e8;
+  color: #23483c;
+}
+
+.java-topic-index {
+  flex-shrink: 0;
+  color: #9aab93;
+  font-size: 10px;
+}
+
+.java-topic-chevron {
+  margin-left: auto;
+  color: #9aab93;
+  font-size: 19px;
+}
+
+/* =========================================
+   LESSON PANEL
+========================================= */
+
+.java-lesson {
+  min-width: 0;
+  padding: 27px;
+  border: 1px solid #e4e8df;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(24, 60, 53, 0.025);
+}
+
+.java-lesson-topline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #829184;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.java-lesson-progress {
+  height: 4px;
+  margin: 13px 0 25px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #edf0e9;
+}
+
+.java-lesson-progress span {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: #82977c;
+  transition: width 0.25s ease;
+}
+
+.java-label {
+  color: #8a9b85;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.java-lesson h2 {
+  margin: 9px 0 12px;
+  color: #183c35;
+  font: 800 25px "Manrope", sans-serif;
+  line-height: 1.4;
+}
+
+.java-lesson-description {
+  margin: 0 0 24px;
+  color: #718176;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   LESSON CODE AND OUTPUT
+========================================= */
+
+.java-code-section,
+.java-output-section {
+  margin-top: 17px;
+  overflow: hidden;
+  border: 1px solid #e4e9e1;
+  border-radius: 7px;
+}
+
+.java-code-heading,
+.java-output-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 15px;
+  background: #f0f3ed;
+  color: #617568;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.java-code-section pre {
+  margin: 0;
+  padding: 19px;
+  overflow-x: auto;
+  background: #172c28;
+  color: #e3e9df;
+  font: 12px/1.9 "SFMono-Regular", Consolas, monospace;
+  white-space: pre;
+}
+
+.java-output-section pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: #fafbf8;
+  color: #31594b;
+  font: 12px/1.8 "SFMono-Regular", Consolas, monospace;
+  white-space: pre-wrap;
+}
+
+/* =========================================
+   LESSON NAVIGATION BUTTONS
+========================================= */
+
+.java-lesson-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.java-previous-btn,
+.java-next-btn {
+  min-height: 42px;
+  padding: 12px 16px;
+  border: 1px solid #dce4d9;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #31594b;
+  font: 700 11px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.java-next-btn {
+  border-color: #183c35;
+  background: #183c35;
+  color: #ffffff;
+}
+
+.java-previous-btn:hover:not(:disabled) {
+  background: #eef1e9;
+  transform: translateY(-1px);
+}
+
+.java-next-btn:hover:not(:disabled) {
+  background: #28584a;
+  transform: translateY(-1px);
+}
+
+.java-previous-btn:disabled,
+.java-next-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   EXAMPLES SECTION
+========================================= */
+
+.java-examples-intro {
+  margin-bottom: 24px;
+}
+
+.java-example-card {
+  margin-bottom: 18px;
+  padding: 22px;
+  border: 1px solid #e4e8df;
+  border-radius: 9px;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.java-example-card:hover {
+  border-color: #bfd0bc;
+  box-shadow: 0 6px 18px rgba(24, 60, 53, 0.045);
+}
+
+.java-example-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.java-example-card-heading > span {
+  color: #91a28a;
+  font: 800 13px "Manrope", sans-serif;
+}
+
+.java-example-card-heading h3 {
+  margin: 0;
+  color: #24483d;
+  font: 700 17px "Manrope", sans-serif;
+}
+
+.java-example-card > p {
+  color: #849087;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   QUIZ INTRODUCTION
+========================================= */
+
+.java-quiz-intro {
+  margin-bottom: 25px;
+  padding: 24px;
+  border: 1px solid #e4e8df;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.java-quiz-progress {
+  margin-top: 20px;
+  color: #718176;
+  font-size: 11px;
+}
+
+.java-quiz-progress > div {
+  height: 5px;
+  margin-top: 9px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #edf0e9;
+}
+
+.java-quiz-progress i {
+  display: block;
+  height: 100%;
+  border-radius: 10px;
+  background: #82977c;
+  transition: width 0.2s ease;
+}
+
+/* =========================================
+   QUIZ QUESTIONS
+========================================= */
+
+.java-question {
+  margin-bottom: 15px;
+  padding: 22px;
+  border: 1px solid #e4e8df;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.java-question-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #879586;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.java-question h3 {
+  margin: 15px 0;
+  color: #24483d;
+  font: 700 15px "Manrope", sans-serif;
+  line-height: 1.7;
+}
+
+/* =========================================
+   QUIZ OPTIONS
+========================================= */
+
+.java-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.java-option {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #e5e9e1;
+  border-radius: 7px;
+  background: #fafbf8;
+  color: #63766a;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.java-option:hover {
+  border-color: #a9b9a3;
+  background: #f3f6f0;
+}
+
+.java-option input {
+  accent-color: #31594b;
+  flex-shrink: 0;
+}
+
+.java-option.selected {
+  border-color: #8da48a;
+  background: #eef3eb;
+  color: #23483c;
+}
+
+.java-option.correct {
+  border-color: #8aaa8b;
+  background: #edf5eb;
+  color: #315b3d;
+}
+
+.java-option.incorrect {
+  border-color: #c9aaa2;
+  background: #f7efec;
+  color: #835148;
+}
+
+.java-option-letter {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 5px;
+  background: #edf0e9;
+  color: #607466;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.java-answer-feedback {
+  margin: 12px 0 0;
+  color: #557c5d;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+/* =========================================
+   QUIZ SUBMIT BUTTON
+========================================= */
+
+.java-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 12px;
+  padding: 14px 21px;
+  border: 1px solid #183c35;
+  border-radius: 7px;
+  background: #183c35;
+  color: #ffffff;
+  font: 700 12px "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.java-submit:hover {
+  background: #28584a;
+  transform: translateY(-1px);
+}
+
+.java-submit span {
+  font-size: 16px;
+}
+
+/* =========================================
+   QUIZ RESULTS
+========================================= */
+
+.java-results {
+  margin-top: 22px;
+  padding: 27px;
+  border: 1px solid #dfe8dc;
+  border-radius: 9px;
+  background: #f0f4ed;
+}
+
+.java-results h2 {
+  margin: 9px 0 20px;
+  color: #183c35;
+  font: 800 25px "Manrope", sans-serif;
+}
+
+.java-results h2 span {
+  color: #82977c;
+}
+
+.java-result-score {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.java-result-score strong {
+  color: #23483c;
+  font: 800 36px "Manrope", sans-serif;
+}
+
+.java-result-score strong span {
+  color: #91a28a;
+  font-size: 18px;
+}
+
+.java-result-score > span,
+.java-result-percentage {
+  color: #718176;
+  font-size: 12px;
+}
+
+.java-result-percentage {
+  margin-top: 4px;
+}
+
+.java-results h3 {
+  margin-top: 24px;
+  color: #31594b;
+  font: 700 14px "Manrope", sans-serif;
+}
+
+.java-results li,
+.java-results > p {
+  margin-bottom: 8px;
+  color: #68796f;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.java-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 19px 0 25px;
+  border-top: 1px solid #e5e9e1;
+  color: #8a978b;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.java-footer > span:first-child {
+  color: #496456;
+  font-weight: 800;
+}
+
+.java-footer i {
+  padding: 0 5px;
+  color: #9aab93;
+  font-style: normal;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.java-module button:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.5);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 850px) {
+  .java-module {
+    padding: 0 5%;
+  }
+
+  .java-hero {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .java-hero-art {
+    min-height: 270px;
+  }
+
+  .java-content {
+    grid-template-columns: 1fr;
+  }
+
+  .java-topic-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .java-sidebar-heading {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 560px) {
+  .java-topbar {
+    min-height: 70px;
+  }
+
+  .java-brand {
+    font-size: 16px;
+    gap: 8px;
+    letter-spacing: 1.4px;
+  }
+
+  .java-brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+  .java-dashboard-btn {
+    padding: 9px 11px;
+    font-size: 11px;
+  }
+
+  .java-hero {
+    min-height: auto;
+    padding: 42px 0 25px;
+  }
+
+  .java-hero h1 {
+    font-size: 57px;
+    letter-spacing: -3px;
+  }
+
+  .java-hero-copy > p {
+    font-size: 14px;
+  }
+
+  .java-hero-art {
+    min-height: 230px;
+  }
+
+  .java-code-window {
+    width: min(100%, 360px);
+  }
+
+  .java-art-orbit-one {
+    width: 270px;
+    height: 270px;
+  }
+
+  .java-art-orbit-two {
+    width: 210px;
+    height: 210px;
+  }
+
+  .java-floating-label {
+    right: 0;
+    bottom: 5px;
+  }
+
+  .java-stats {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 17px 13px;
+  }
+
+  .java-stats strong {
+    font-size: 19px;
+  }
+
+  .java-stats span {
+    font-size: 9px;
+  }
+
+  .java-stats-divider {
+    height: 32px;
+  }
+
+  .java-learning-area {
+    padding: 42px 0;
+  }
+
+  .java-section-heading h2,
+  .java-quiz-intro h2,
+  .java-examples-intro h2 {
+    font-size: 25px;
+  }
+
+  .java-navigation {
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .java-navigation button {
+    gap: 5px;
+    padding: 12px 5px;
+    font-size: 11px;
+  }
+
+  .java-navigation button span {
+    font-size: 9px;
+  }
+
+  .java-topic-list {
+    grid-template-columns: 1fr;
+  }
+
+  .java-lesson {
+    padding: 18px;
+  }
+
+  .java-lesson h2 {
+    font-size: 21px;
+  }
+
+  .java-code-section pre,
+  .java-output-section pre {
+    font-size: 11px;
+  }
+
+  .java-lesson-buttons {
+    gap: 8px;
+  }
+
+  .java-previous-btn,
+  .java-next-btn {
+    padding: 11px 10px;
+    font-size: 10px;
+  }
+
+  .java-example-card,
+  .java-question {
+    padding: 16px;
+  }
+
+  .java-options {
+    grid-template-columns: 1fr;
+  }
+
+  .java-quiz-intro {
+    padding: 18px;
+  }
+
+  .java-results {
+    padding: 20px;
+  }
+
+  .java-footer {
+    flex-direction: column;
+    padding: 19px 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+  .java-module {
+    padding: 0 4%;
+  }
+
+  .java-brand {
+    font-size: 14px;
+  }
+
+  .java-dashboard-btn {
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .java-hero h1 {
+    font-size: 48px;
+  }
+
+  .java-stats {
+    gap: 10px;
+    padding: 14px 9px;
+  }
+
+  .java-stats strong {
+    font-size: 17px;
+  }
+
+  .java-stats span {
+    font-size: 8px;
+  }
+
+  .java-lesson {
+    padding: 15px;
+  }
+
+  .java-lesson h2 {
+    font-size: 19px;
+  }
+
+  .java-lesson-buttons {
+    flex-direction: column;
+  }
+
+  .java-previous-btn,
+  .java-next-btn {
+    width: 100%;
+  }
+
+  .java-results {
+    padding: 17px;
+  }
+
+  .java-result-score strong {
+    font-size: 30px;
+  }
+}

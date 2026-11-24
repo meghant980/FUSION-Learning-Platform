@@ -1,0 +1,324 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =================================
+   FUSION ADMIN DASHBOARD
+================================= */
+
+.admin-container {
+  min-height: 100vh;
+  padding: 36px 6%;
+  background: #f7f7f3;
+  color: #263b34;
+  font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.admin-container *,
+.admin-container *::before,
+.admin-container *::after {
+  box-sizing: border-box;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.admin-header {
+  min-height: 76px;
+  padding: 15px 25px;
+  background: #183c35;
+  color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  margin-bottom: 45px;
+  box-shadow: 0 5px 16px rgba(24, 60, 53, 0.1);
+}
+
+.logout-btn {
+  flex-shrink: 0;
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 17px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+}
+
+/* =================================
+   SECTIONS
+================================= */
+
+.admin-container .section {
+  margin-bottom: 48px;
+}
+
+.admin-container .section h2 {
+  margin: 0 0 25px;
+  color: #203b31;
+  font-family: "Manrope", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.admin-container .section h2::after {
+  content: "";
+  width: 43px;
+  height: 3px;
+  background: #78947c;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+/* =================================
+   TEACHER GRID
+================================= */
+
+.teacher-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+/* =================================
+   TEACHER CARD
+================================= */
+
+.teacher-card {
+  min-width: 0;
+  background: #ffffff;
+  padding: 25px;
+  border: 1px solid #e4e9e1;
+  border-radius: 11px;
+  box-shadow: 0 3px 12px rgba(32, 59, 49, 0.035);
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.teacher-card:hover {
+  transform: translateY(-3px);
+  border-color: #b7c9b7;
+  box-shadow: 0 9px 22px rgba(32, 59, 49, 0.08);
+}
+
+/* APPROVED CARD */
+
+.teacher-card.approved {
+  border-left: 4px solid #668d6c;
+  background: #ffffff;
+}
+
+/* TEACHER DETAILS */
+
+.teacher-card h3 {
+  margin: 0 0 10px;
+  color: #263b34;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.teacher-card p {
+  margin: 8px 0;
+  color: #7c8980;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.teacher-card p strong {
+  color: #40594a;
+  font-weight: 700;
+}
+
+/* =================================
+   APPROVAL STATUS
+================================= */
+
+.teacher-card .approved-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: #e8f1e8;
+  color: #39714e;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =================================
+   APPROVE BUTTON
+================================= */
+
+.approve-btn {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border-radius: 7px;
+  border: 1px solid #315c43;
+  background: #315c43;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.approve-btn:hover {
+  background: #234b35;
+  border-color: #234b35;
+  transform: translateY(-1px);
+}
+
+/* =================================
+   DISAPPROVE BUTTON
+================================= */
+
+.disapprove-btn {
+  margin-top: 15px;
+  padding: 10px 16px;
+  border-radius: 7px;
+  border: 1px solid #e5caca;
+  background: #ffffff;
+  color: #a34b4b;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.disapprove-btn:hover {
+  background: #fbefed;
+  border-color: #d8aaaa;
+  transform: translateY(-1px);
+}
+
+/* =================================
+   EMPTY STATE
+================================= */
+
+.empty-state {
+  background: #ffffff;
+  padding: 30px 20px;
+  border: 1px dashed #cbd6c9;
+  border-radius: 10px;
+  text-align: center;
+  color: #7d8b80;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =================================
+   BUTTON ACCESSIBILITY
+================================= */
+
+.admin-container button:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.45);
+  outline-offset: 3px;
+}
+
+/* =================================
+   TABLET RESPONSIVENESS
+================================= */
+
+@media (max-width: 900px) {
+  .admin-container {
+    padding: 28px 5%;
+  }
+
+  .teacher-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+  }
+}
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 650px) {
+  .admin-container {
+    padding: 20px 5%;
+  }
+
+  .admin-header {
+    min-height: 68px;
+    padding: 14px 16px;
+    font-size: 17px;
+    margin-bottom: 35px;
+    border-radius: 9px;
+  }
+
+  .logout-btn {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .admin-container .section {
+    margin-bottom: 36px;
+  }
+
+  .admin-container .section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .teacher-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .teacher-card {
+    padding: 21px;
+  }
+}
+
+/* =================================
+   EXTRA SMALL MOBILE SCREENS
+================================= */
+
+@media (max-width: 360px) {
+  .admin-header {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .logout-btn {
+    padding: 8px 9px;
+    font-size: 10px;
+  }
+
+  .teacher-card {
+    padding: 18px;
+  }
+}

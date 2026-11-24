@@ -1,0 +1,1020 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   FUSION - STUDENT SUBJECTIVE ASSIGNMENTS
+   Forest Green / Sage / Off-white Theme
+========================================= */
+
+.ss-page {
+  min-height: 100vh;
+  background: #f7f7f3;
+  color: #183c35;
+  font-family: "DM Sans", "Manrope", Arial, sans-serif;
+  padding-bottom: 30px;
+  overflow-x: hidden;
+}
+
+.ss-page *,
+.ss-page *::before,
+.ss-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.ss-header {
+  min-height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8eae3;
+}
+
+.ss-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #183c35;
+}
+
+.ss-brand-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #183c35;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.ss-header-label {
+  color: #87958b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ss-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border: 1px solid #dce4dc;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #35584d;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ss-back-btn:hover {
+  background: #edf2eb;
+  border-color: #9eafa0;
+  transform: translateY(-1px);
+}
+
+.ss-back-btn span {
+  font-size: 18px;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.ss-main {
+  width: min(1100px, 88%);
+  margin: 38px auto 0;
+}
+
+/* =========================================
+   HERO BANNER
+========================================= */
+
+.ss-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  padding: 42px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #183c35;
+  border-radius: 14px;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(24, 60, 53, 0.07);
+}
+
+.ss-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.ss-eyebrow,
+.ss-section-label {
+  display: inline-block;
+  color: #a8c3ad;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ss-hero h1 {
+  margin: 15px 0 10px;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(29px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.ss-hero p {
+  max-width: 540px;
+  margin: 0;
+  color: #d0ddd4;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ss-hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+  color: #d2e0d4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.ss-meta-dot {
+  width: 4px;
+  height: 4px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #a9c7a8;
+}
+
+/* =========================================
+   HERO DECORATION
+========================================= */
+
+.ss-hero-decoration {
+  position: absolute;
+  right: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(210, 229, 211, 0.16);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.ss-decoration-circle {
+  width: 115px;
+  height: 115px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(210, 229, 211, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.ss-decoration-circle span {
+  font-size: 55px;
+  color: #c5d8c6;
+}
+
+.ss-decoration-line {
+  position: absolute;
+  width: 240px;
+  height: 1px;
+  background: rgba(210, 229, 211, 0.17);
+  transform: rotate(-45deg);
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.ss-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin: 48px 0 24px;
+}
+
+.ss-section-label {
+  color: #829589;
+  font-size: 10px;
+}
+
+.ss-section-heading h2 {
+  margin: 7px 0;
+  color: #183c35;
+  font-family: "Manrope", sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.35;
+}
+
+.ss-section-heading p {
+  margin: 0;
+  color: #78867e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.ss-count {
+  min-width: 76px;
+  padding: 11px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #e1e7df;
+  border-radius: 10px;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.ss-count strong {
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #183c35;
+}
+
+.ss-count span {
+  color: #89958c;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   ASSIGNMENT LIST
+========================================= */
+
+.ss-assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* =========================================
+   ASSIGNMENT CARD
+========================================= */
+
+.ss-card {
+  min-width: 0;
+  padding: 27px 30px;
+  background: #ffffff;
+  border: 1px solid #e7eae3;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(31, 58, 46, 0.035);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ss-card:hover {
+  border-color: #d2ded0;
+  box-shadow: 0 7px 22px rgba(31, 58, 46, 0.055);
+}
+
+/* =========================================
+   QUESTION CARD HEADER
+========================================= */
+
+.ss-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf0ea;
+}
+
+.ss-question-number {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ss-question-number span {
+  color: #87958b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.ss-question-number strong {
+  color: #183c35;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* =========================================
+   ASSIGNMENT STATUS
+========================================= */
+
+.ss-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 30px;
+  background: #fff5e7;
+  color: #a46d26;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ss-status-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #d99a3d;
+}
+
+.ss-status-submitted {
+  background: #edf5ed;
+  color: #38694c;
+}
+
+.ss-status-submitted .ss-status-dot {
+  background: #4b8a5e;
+}
+
+/* =========================================
+   QUESTION CONTENT
+========================================= */
+
+.ss-question-content {
+  padding: 24px 0 22px;
+}
+
+.ss-question-content h3 {
+  margin: 0;
+  color: #243d34;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   MARKS DISPLAY
+========================================= */
+
+.ss-marks {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 13px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  background: #f3f5ef;
+  color: #728176;
+  font-size: 12px;
+}
+
+.ss-marks-icon {
+  color: #9b8654;
+}
+
+.ss-marks strong {
+  color: #315b48;
+  font-weight: 800;
+}
+
+/* =========================================
+   ANSWER AREA
+========================================= */
+
+.ss-answer-area label,
+.ss-feedback > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #75877b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.ss-answer-area textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 16px;
+  resize: vertical;
+  border: 1px solid #dfe6dc;
+  border-radius: 8px;
+  outline: none;
+  background: #fbfcf9;
+  color: #263e34;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.8;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.ss-answer-area textarea:focus {
+  border-color: #6c9078;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(83, 125, 96, 0.09);
+}
+
+.ss-answer-area textarea:disabled {
+  background: #f3f5f1;
+  color: #7a877e;
+  cursor: not-allowed;
+}
+
+.ss-answer-area textarea::placeholder {
+  color: #aab3aa;
+}
+
+.ss-answer-hint {
+  margin-top: 7px;
+  color: #98a39a;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   SUBMISSION ACTION AREA
+========================================= */
+
+.ss-submit-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 21px;
+}
+
+/* =========================================
+   FILE UPLOAD
+========================================= */
+
+.ss-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+}
+
+.ss-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 15px;
+  border: 1px solid #cbd9cc;
+  border-radius: 7px;
+  background: #f5f8f3;
+  color: #315c46;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ss-upload-btn:hover {
+  background: #eaf1e8;
+  border-color: #a9bba8;
+  transform: translateY(-1px);
+}
+
+.ss-upload-btn input {
+  display: none;
+}
+
+.ss-upload-btn.ss-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ss-upload-icon {
+  font-size: 18px;
+}
+
+.ss-file-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 280px;
+  color: #55765e;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.ss-file-name span:first-child {
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: #edf4ed;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* =========================================
+   SUBMIT BUTTONS
+========================================= */
+
+.ss-submit-btn,
+.ss-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 19px;
+  border: 1px solid #214d40;
+  border-radius: 7px;
+  background: #214d40;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ss-submit-btn:hover:not(:disabled),
+.ss-primary-btn:hover {
+  background: #2e6652;
+  border-color: #2e6652;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 60, 53, 0.12);
+}
+
+.ss-submit-btn span {
+  font-size: 17px;
+}
+
+.ss-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.ss-submitted-btn {
+  background: #64816a;
+  border-color: #64816a;
+}
+
+/* =========================================
+   SUBMISSION RESULT
+========================================= */
+
+.ss-result {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #dce8dc;
+  border-radius: 9px;
+  background: #f5f9f3;
+}
+
+.ss-result-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ss-result-check {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e0eddf;
+  color: #376c48;
+  font-weight: 800;
+}
+
+.ss-result-heading h4 {
+  margin: 0 0 4px;
+  color: #31563d;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.ss-result-heading p {
+  margin: 0;
+  color: #7b8b7b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.ss-result-marks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 18px 0;
+  padding: 13px 0;
+  border-top: 1px solid #e0e9dd;
+  border-bottom: 1px solid #e0e9dd;
+  color: #667b68;
+  font-size: 12px;
+}
+
+.ss-result-marks strong {
+  color: #315d40;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.ss-result-marks small {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ss-feedback p {
+  margin: 0;
+  color: #536b56;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   EMPTY AND STATE CARDS
+========================================= */
+
+.ss-empty,
+.ss-state-card {
+  padding: 55px 25px;
+  text-align: center;
+  border: 1px solid #e5eae2;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.ss-empty-icon,
+.ss-state-icon {
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf3eb;
+  color: #41664e;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.ss-empty h3,
+.ss-state-card h3 {
+  margin: 0 0 9px;
+  color: #244437;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.ss-empty p,
+.ss-state-card p {
+  max-width: 440px;
+  margin: 0 auto;
+  color: #839087;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.ss-state-card {
+  width: min(500px, 88%);
+  margin: 100px auto;
+  box-shadow: 0 5px 20px rgba(24, 60, 53, 0.035);
+}
+
+.ss-state-card .ss-primary-btn {
+  margin-top: 22px;
+}
+
+.ss-state-card .ss-back-btn {
+  margin: 22px 0 0 8px;
+}
+
+/* =========================================
+   LOADING SPINNER
+========================================= */
+
+.ss-loader {
+  width: 35px;
+  height: 35px;
+  margin: 0 auto 20px;
+  border: 3px solid #e3eae1;
+  border-top-color: #315e49;
+  border-radius: 50%;
+  animation: ss-spin 0.8s linear infinite;
+}
+
+@keyframes ss-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.ss-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: min(1100px, 88%);
+  margin: 55px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid #e3e8e0;
+  color: #87958b;
+}
+
+.ss-footer span {
+  color: #315344;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.ss-footer p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.ss-page button:focus-visible,
+.ss-page a:focus-visible,
+.ss-page textarea:focus-visible,
+.ss-page input:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.45);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+  .ss-main {
+    width: 92%;
+  }
+
+  .ss-hero {
+    padding: 35px;
+  }
+
+  .ss-hero-decoration {
+    right: 3%;
+    opacity: 0.65;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+  .ss-header {
+    padding: 0 5%;
+    min-height: 68px;
+  }
+
+  .ss-brand {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+  }
+
+  .ss-header-label {
+    display: none;
+  }
+
+  .ss-back-btn {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+
+  .ss-main {
+    width: 90%;
+    margin-top: 22px;
+  }
+
+  .ss-hero {
+    min-height: 230px;
+    padding: 30px 25px;
+    border-radius: 11px;
+  }
+
+  .ss-hero-decoration {
+    right: -95px;
+    opacity: 0.45;
+  }
+
+  .ss-hero h1 {
+    font-size: 30px;
+  }
+
+  .ss-hero p {
+    font-size: 13px;
+    max-width: 420px;
+  }
+
+  .ss-hero-meta {
+    gap: 9px;
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .ss-section-heading {
+    align-items: flex-start;
+    margin: 35px 0 20px;
+  }
+
+  .ss-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .ss-section-heading p {
+    font-size: 12px;
+  }
+
+  .ss-count {
+    min-width: 64px;
+    padding: 9px 11px;
+  }
+
+  .ss-count strong {
+    font-size: 19px;
+  }
+
+  .ss-assignment-list {
+    gap: 16px;
+  }
+
+  .ss-card {
+    padding: 20px 17px;
+    border-radius: 10px;
+  }
+
+  .ss-card-top {
+    gap: 10px;
+    padding-bottom: 16px;
+  }
+
+  .ss-question-number {
+    gap: 8px;
+  }
+
+  .ss-question-number strong {
+    font-size: 18px;
+  }
+
+  .ss-status {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .ss-question-content {
+    padding: 20px 0;
+  }
+
+  .ss-question-content h3 {
+    font-size: 16px;
+  }
+
+  .ss-answer-area textarea {
+    min-height: 135px;
+    padding: 13px;
+    font-size: 13px;
+  }
+
+  .ss-submit-area {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ss-upload-section {
+    width: 100%;
+  }
+
+  .ss-file-name {
+    max-width: 100%;
+  }
+
+  .ss-submit-btn {
+    width: 100%;
+  }
+
+  .ss-result {
+    padding: 16px;
+  }
+
+  .ss-footer {
+    width: 90%;
+    margin-top: 35px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+  .ss-brand {
+    font-size: 14px;
+    gap: 7px;
+  }
+
+  .ss-brand-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .ss-back-btn {
+    padding: 8px;
+    font-size: 10px;
+  }
+
+  .ss-main {
+    width: 92%;
+  }
+
+  .ss-hero {
+    padding: 25px 18px;
+  }
+
+  .ss-hero h1 {
+    font-size: 27px;
+  }
+
+  .ss-hero-decoration {
+    right: -125px;
+  }
+
+  .ss-card {
+    padding: 17px 14px;
+  }
+
+  .ss-card-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ss-section-heading h2 {
+    font-size: 20px;
+  }
+
+  .ss-state-card {
+    margin: 60px auto;
+    padding: 35px 18px;
+  }
+
+  .ss-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

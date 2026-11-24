@@ -1,55 +1,27 @@
-
 {
-  "name": "fusion-frontend",
-  "version": "0.1.0",
+  "name": "fusion-project",
+  "version": "1.0.0",
   "private": true,
-  "proxy": "http://localhost:5001",
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "axios": "^1.13.2",
-    "file-saver": "^2.0.5",
-    "jspdf": "^3.0.4",
-    "jspdf-autotable": "^5.0.2",
-    "monaco-editor": "^0.54.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.9.5",
-    "react-scripts": "5.0.1",
-    "react-toastify": "^11.0.5",
-    "web-vitals": "^2.1.4",
-    "xlsx": "^0.18.5"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && node scripts/replace-api-url.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "csv-parser": "^3.2.0",
+    "express-rate-limit": "^8.3.2",
+    "helmet": "^8.1.0",
+    "jspdf": "^4.2.1",
+    "jspdf-autotable": "^5.0.7",
+    "openai": "^6.33.0",
+    "pdf2json": "^4.0.3",
+    "react-router-dom": "^7.9.5"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.11",
     "tailwindcss": "^4.1.17"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd fusion-backend && nodemon server.js",
+    "client": "cd fusion-frontend && npm start"
   }
 }

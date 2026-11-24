@@ -1,0 +1,424 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+.teacher-upload-page {
+  min-height: 100vh;
+  background: #f7f7f3;
+  color: #183c35;
+  font-family: "DM Sans", Arial, sans-serif;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
+
+.teacher-upload-page *,
+.teacher-upload-page *::before,
+.teacher-upload-page *::after {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.teacher-upload-header {
+  min-height: 250px;
+  padding: 55px 8% 65px;
+  background: #183c35;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.teacher-upload-brand {
+  color: #b8c9b6;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.teacher-upload-header h1 {
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(27px, 4vw, 36px);
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+
+.teacher-upload-header p {
+  max-width: 650px;
+  color: #d4e0d8;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* MAIN FORM */
+
+.teacher-upload-main {
+  width: 84%;
+  max-width: 850px;
+  margin: -28px auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+.teacher-upload-card {
+  background: #fff;
+  border: 1px solid #e2e8df;
+  border-radius: 14px;
+  padding: 38px;
+  box-shadow: 0 12px 35px rgba(24, 60, 53, 0.06);
+}
+
+.teacher-upload-intro {
+  margin-bottom: 30px;
+}
+
+.teacher-upload-intro h2 {
+  color: #183c35;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.teacher-upload-intro p {
+  color: #718078;
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* FORM FIELDS */
+
+.teacher-upload-form-group {
+  min-width: 0;
+  margin-bottom: 23px;
+}
+
+.teacher-upload-form-group > label {
+  display: block;
+  color: #214d40;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.teacher-upload-form-group input,
+.teacher-upload-form-group textarea,
+.teacher-upload-form-group select {
+  width: 100%;
+  min-height: 48px;
+  background: #fbfcfa;
+  border: 1px solid #dce4da;
+  border-radius: 8px;
+  padding: 13px 15px;
+  color: #183c35;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.teacher-upload-form-group input:hover,
+.teacher-upload-form-group textarea:hover,
+.teacher-upload-form-group select:hover {
+  border-color: #b8c9b6;
+}
+
+.teacher-upload-form-group input:focus,
+.teacher-upload-form-group textarea:focus,
+.teacher-upload-form-group select:focus {
+  border-color: #789582;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(138, 155, 133, 0.14);
+}
+
+.teacher-upload-form-group input::placeholder,
+.teacher-upload-form-group textarea::placeholder {
+  color: #a0aaa2;
+}
+
+.teacher-upload-form-group textarea {
+  min-height: 115px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.teacher-upload-form-group select {
+  cursor: pointer;
+}
+
+.teacher-upload-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* FILE SELECTION */
+
+.teacher-upload-file-box {
+  width: 100%;
+  min-height: 165px;
+  padding: 25px;
+  background: #f7f9f5;
+  border: 1.5px dashed #a9bba8;
+  border-radius: 10px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.teacher-upload-file-box:hover {
+  background: #edf3eb;
+  border-color: #527761;
+}
+
+.teacher-upload-file-icon {
+  display: block;
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.teacher-upload-file-title {
+  display: block;
+  width: 100%;
+  color: #214d40;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  margin: 0;
+}
+
+.teacher-upload-file-subtitle {
+  display: block;
+  width: 100%;
+  color: #89958c;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.teacher-upload-help {
+  display: block;
+  color: #89958c;
+  font-size: 11px;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* UPLOAD BUTTON */
+
+.teacher-upload-submit {
+  width: 100%;
+  min-height: 52px;
+  background: #183c35;
+  color: #fff;
+  border: 1px solid #183c35;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.teacher-upload-submit:hover:not(:disabled) {
+  background: #285447;
+  border-color: #285447;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 13px rgba(24, 60, 53, 0.13);
+}
+
+.teacher-upload-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* STATUS MESSAGES */
+
+.teacher-upload-message {
+  margin: 17px 0 0;
+  padding: 12px 14px;
+  border-radius: 7px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.teacher-upload-message.success {
+  background: #edf5ec;
+  color: #285c3b;
+  border: 1px solid #d4e7d2;
+}
+
+.teacher-upload-message.error {
+  background: #fbefec;
+  color: #a13e32;
+  border: 1px solid #efd6d0;
+}
+
+/* BOTTOM NAVIGATION */
+
+.teacher-upload-actions {
+  width: 84%;
+  max-width: 850px;
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.teacher-upload-secondary,
+.teacher-upload-back {
+  min-height: 44px;
+  padding: 11px 19px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.teacher-upload-secondary {
+  background: #e7eee5;
+  color: #214d40;
+  border: 1px solid #d5e0d3;
+}
+
+.teacher-upload-secondary:hover {
+  background: #dce8d9;
+  border-color: #b8c9b6;
+}
+
+.teacher-upload-back {
+  background: #fff;
+  color: #214d40;
+  border: 1px solid #cbd6ca;
+}
+
+.teacher-upload-back:hover {
+  background: #edf2eb;
+  border-color: #a9bba8;
+}
+
+/* ACCESSIBILITY */
+
+.teacher-upload-page button:focus-visible,
+.teacher-upload-page a:focus-visible,
+.teacher-upload-file-box:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.45);
+  outline-offset: 3px;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .teacher-upload-main,
+  .teacher-upload-actions {
+    width: 88%;
+  }
+
+  .teacher-upload-header {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .teacher-upload-card {
+    padding: 30px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .teacher-upload-page {
+    padding-bottom: 35px;
+  }
+
+  .teacher-upload-header {
+    min-height: 205px;
+    padding: 35px 7% 55px;
+  }
+
+  .teacher-upload-brand {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .teacher-upload-header h1 {
+    font-size: 26px;
+  }
+
+  .teacher-upload-header p {
+    font-size: 13px;
+  }
+
+  .teacher-upload-main,
+  .teacher-upload-actions {
+    width: 90%;
+  }
+
+  .teacher-upload-card {
+    padding: 24px 19px;
+    border-radius: 11px;
+  }
+
+  .teacher-upload-intro h2 {
+    font-size: 19px;
+  }
+
+  .teacher-upload-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .teacher-upload-file-box {
+    min-height: 145px;
+    padding: 20px;
+  }
+
+  .teacher-upload-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .teacher-upload-secondary,
+  .teacher-upload-back {
+    width: 100%;
+    min-height: 46px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+  .teacher-upload-header {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .teacher-upload-main,
+  .teacher-upload-actions {
+    width: 92%;
+  }
+
+  .teacher-upload-card {
+    padding: 20px 14px;
+  }
+
+  .teacher-upload-header h1 {
+    font-size: 23px;
+  }
+}

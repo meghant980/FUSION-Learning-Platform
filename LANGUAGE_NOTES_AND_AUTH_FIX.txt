@@ -1,0 +1,21 @@
+E-FUSION UPDATE: LANGUAGE NOTES + LOCAL LOGIN TOKEN FIX
+
+WHAT CHANGED
+1. Login and frontend API calls now use http://localhost:5001 by default instead of mixing the deployed Render backend with the local backend.
+2. The React development proxy now points to http://localhost:5001.
+3. Login stores the issued JWT in both localStorage key "token" and inside "fusionUser". Existing course pages can read the same session automatically.
+4. Students do NOT need to copy, paste, or manually enter a token. Login generates it automatically.
+5. Added Topic Notes to the All Language Practice page. Select Topic Notes, choose C / C++ / Java / Python / JavaScript, and filter by unit or topic.
+6. Notes explain the shared programming idea and show the selected language's syntax examples.
+
+NOTES COVER
+Program structure, variables and data types, input/output, operators, conditions, loops, arrays/lists, strings, functions/methods, recursion, searching/sorting, OOP, exception handling, and collections/maps.
+
+RUN LOCALLY
+- Keep fusion-backend/.env with your existing MONGO_URI and JWT_SECRET. Do not share these secrets.
+- Backend: cd fusion-backend ; npm run dev
+- Frontend: cd fusion-frontend ; create .env.local containing REACT_APP_API_URL=http://localhost:5001 ; npm start
+- Log out once and log in again after replacing the frontend, so a fresh token is issued by the same local backend.
+
+IMPORTANT
+The token is generated automatically by the backend on successful login. Do not manually create or paste a JWT. Keep JWT_SECRET identical for the backend process that handles both login and protected coding API requests. The code runner still depends on the configured Judge0 service and internet access.

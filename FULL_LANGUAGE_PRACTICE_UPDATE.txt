@@ -1,0 +1,18 @@
+FUSION - Full Language Practice Hub update
+
+Added:
+- 200 seeded practice questions: 5 languages x 4 units x 10 questions.
+- C, C++, Java, Python and JavaScript question banks.
+- Topic coverage across fundamentals, operators, conditionals, loops, arrays, strings,
+  functions, searching, sorting, OOP, collections, recursion, exception handling and 2D arrays.
+- Database seed command: npm run seed:practice (run from fusion-backend).
+- Local frontend API configuration through REACT_APP_API_URL, defaulting to http://localhost:5001.
+- Existing coding workspace and Judge0 execution integration are retained.
+
+IMPORTANT:
+The question records are included in the project seed script. They must be inserted into your
+local MongoDB database by running `npm run seed:practice` once after configuring
+fusion-backend/.env with MONGO_URI. The seed is repeatable and updates matching questions.
+
+Actual code execution uses the existing Judge0 Community Edition service. An internet connection
+and availability of the public Judge0 service are required for Run.

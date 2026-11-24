@@ -1,0 +1,247 @@
+
+/* =========================================
+   FUSION SHARED SIGNUP AND SET PASSWORD UI
+   Uses the existing Fusion website theme.
+========================================= */
+
+.auth-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 7%;
+  background: #f7f7f3;
+  color: #26382f;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.auth-container * {
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+.register-header {
+  width: 100%;
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #dfe4dc;
+  color: #183c35;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.register-header span {
+  color: #65766b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* FORM POSITION */
+
+.auth-center-wrapper {
+  flex: 1;
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FORM CARD */
+
+.auth-center-card {
+  width: 100%;
+  padding: 38px;
+  background: #ffffff;
+  border: 1px solid #e2e7df;
+  border-radius: 10px;
+  box-shadow: 0 10px 35px rgba(31, 48, 39, 0.05);
+}
+
+/* ICON */
+
+.user-circle {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 22px;
+  display: grid;
+  place-items: center;
+  background: #e9efe8;
+  border: 1px solid #dce3da;
+  border-radius: 50%;
+  color: #315c48;
+  font-size: 25px;
+}
+
+/* HEADINGS */
+
+.auth-center-card h2 {
+  margin: 0 0 9px;
+  color: #254638;
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.auth-sub-text {
+  margin: 0 0 27px;
+  color: #7b867e;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* FORM */
+
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form input {
+  width: 100%;
+  min-height: 49px;
+  margin: 0;
+  padding: 0 14px;
+  border: 1px solid #dce3da;
+  border-radius: 6px;
+  outline: none;
+  background: #ffffff;
+  color: #26382f;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-form input:focus {
+  border-color: #78917e;
+  box-shadow: 0 0 0 3px rgba(120, 145, 126, 0.12);
+}
+
+.auth-form input::placeholder {
+  color: #a0aaa2;
+}
+
+/* SUBMIT BUTTON */
+
+.auth-btn {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 8px;
+  padding: 0 18px;
+  border: 1px solid #183c35;
+  border-radius: 6px;
+  background: #183c35;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.auth-btn:hover {
+  background: #315c48;
+  transform: translateY(-1px);
+}
+
+.auth-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* FORM MESSAGE */
+
+.auth-message {
+  margin: 17px 0 0;
+  padding: 12px 14px;
+  border: 1px solid #dfe6dc;
+  border-radius: 6px;
+  background: #f7f7f3;
+  color: #536c5d;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* ACCESSIBILITY */
+
+.auth-container button:focus-visible,
+.auth-container input:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.35);
+  outline-offset: 3px;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+  .auth-container {
+    padding: 0 5%;
+  }
+
+  .auth-center-wrapper {
+    max-width: 570px;
+    padding: 45px 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+  .register-header {
+    min-height: 70px;
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .register-header span {
+    font-size: 11px;
+    text-align: right;
+  }
+
+  .auth-center-wrapper {
+    padding: 35px 0;
+  }
+
+  .auth-center-card {
+    padding: 25px 20px;
+  }
+
+  .auth-center-card h2 {
+    font-size: 24px;
+  }
+
+  .auth-sub-text {
+    font-size: 12px;
+  }
+
+  .auth-form input {
+    min-height: 47px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 350px) {
+  .auth-center-card {
+    padding: 21px 15px;
+  }
+
+  .register-header {
+    font-size: 16px;
+  }
+}

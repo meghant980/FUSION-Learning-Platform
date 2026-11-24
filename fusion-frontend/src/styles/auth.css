@@ -1,0 +1,674 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =================================
+   SHARED PAGE SETTINGS
+================================= */
+
+.fusion-register-page,
+.fusion-login-page {
+  min-height: 100vh;
+  padding: 0 7%;
+  background: #f7f7f3;
+  color: #26382f;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.fusion-register-page *,
+.fusion-login-page * {
+  box-sizing: border-box;
+}
+
+/* =================================
+   SHARED HEADER
+================================= */
+
+.fusion-register-header,
+.fusion-login-header {
+  min-height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #dfe4dc;
+}
+
+.fusion-register-brand,
+.fusion-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #183c35;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.fusion-register-mark,
+.fusion-login-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: #183c35;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.fusion-register-back,
+.fusion-login-back {
+  color: #65766b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.fusion-register-back:hover,
+.fusion-login-back:hover {
+  color: #183c35;
+}
+
+/* =================================
+   REGISTER PAGE
+================================= */
+
+.fusion-register-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 65px 0;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.fusion-register-label {
+  color: #638274;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.fusion-register-intro h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(55px, 7vw, 82px);
+  line-height: 1.08;
+  letter-spacing: -4px;
+  color: #203b30;
+  margin: 25px 0;
+}
+
+.fusion-register-intro h1 span {
+  color: #8a9b85;
+}
+
+.fusion-register-intro p {
+  max-width: 430px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #69766d;
+}
+
+.fusion-register-divider {
+  width: 65px;
+  height: 3px;
+  background: #78917e;
+  margin: 35px 0 25px;
+}
+
+.fusion-register-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.fusion-register-languages span {
+  padding: 9px 12px;
+  background: #ffffff;
+  border: 1px solid #dce3da;
+  color: #536c5d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.fusion-register-options {
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e2e7df;
+  border-radius: 10px;
+  padding: 38px;
+  box-shadow: 0 10px 35px rgba(31, 48, 39, 0.05);
+}
+
+.fusion-register-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #e2e7df;
+  padding-bottom: 17px;
+  color: #7a897f;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.fusion-register-options > h2 {
+  margin: 27px 0 7px;
+  color: #254638;
+  font-family: "Manrope", sans-serif;
+  font-size: 27px;
+}
+
+.fusion-register-description {
+  color: #7b867e;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.fusion-register-option {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  padding: 22px 18px;
+  margin-top: 15px;
+  background: #ffffff;
+  border: 1px solid #dfe6dc;
+  border-radius: 8px;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fusion-register-option:hover {
+  background: #f1f5ef;
+  border-color: #78917e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(31, 48, 39, 0.06);
+}
+
+.fusion-register-option-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.fusion-register-number {
+  color: #829188;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.fusion-register-option h3 {
+  color: #254638;
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  margin: 9px 0 6px;
+}
+
+.fusion-register-option p {
+  color: #7b867e;
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.fusion-register-arrow {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8e0d6;
+  border-radius: 50%;
+  color: #315c48;
+  font-size: 20px;
+  transition: background 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.fusion-register-option:hover .fusion-register-arrow {
+  background: #214d40;
+  color: #ffffff;
+  border-color: #214d40;
+}
+
+.fusion-register-login {
+  border-top: 1px solid #e5e9e3;
+  padding-top: 22px;
+  margin-top: 25px;
+  color: #7b867e;
+  font-size: 12px;
+}
+
+.fusion-register-login a {
+  color: #315c48;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.fusion-register-login a:hover {
+  color: #183c35;
+  text-decoration: underline;
+}
+
+/* =================================
+   LOGIN PAGE
+================================= */
+
+.fusion-login-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 65px 0;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.fusion-login-intro h1 {
+  margin: 0 0 24px;
+  color: #203b30;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(52px, 6.5vw, 78px);
+  line-height: 1.08;
+  letter-spacing: -3px;
+}
+
+.fusion-login-intro h1 span {
+  color: #8a9b85;
+}
+
+.fusion-login-intro > p {
+  max-width: 430px;
+  color: #69766d;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.fusion-login-language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 35px;
+}
+
+.fusion-login-language-list span {
+  padding: 9px 12px;
+  background: #ffffff;
+  border: 1px solid #dce3da;
+  color: #536c5d;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.fusion-login-panel {
+  min-width: 0;
+  padding: 38px;
+  background: #ffffff;
+  border: 1px solid #e2e7df;
+  border-radius: 10px;
+  box-shadow: 0 10px 35px rgba(31, 48, 39, 0.05);
+}
+
+.fusion-login-panel h2 {
+  margin: 0;
+  color: #254638;
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+}
+
+.fusion-login-description {
+  margin: 8px 0 25px;
+  color: #7b867e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.fusion-login-account-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 27px;
+}
+
+.fusion-login-type {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 11px;
+  background: #ffffff;
+  border: 1px solid #dfe6dc;
+  border-radius: 8px;
+  text-align: left;
+  color: #254638;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.fusion-login-type:hover,
+.fusion-login-type.active {
+  background: #f1f5ef;
+  border-color: #78917e;
+}
+
+.fusion-login-type-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #e9efe8;
+  color: #315c48;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.fusion-login-type strong,
+.fusion-login-type small {
+  display: block;
+}
+
+.fusion-login-type strong {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.fusion-login-type small {
+  color: #7b867e;
+  font-size: 10px;
+}
+
+.fusion-login-type-arrow {
+  margin-left: auto;
+  color: #315c48;
+}
+
+.fusion-login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.fusion-login-form label {
+  margin: 0 0 8px;
+  color: #536c5d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.fusion-login-form input {
+  width: 100%;
+  min-height: 47px;
+  margin-bottom: 20px;
+  padding: 0 13px;
+  border: 1px solid #dce3da;
+  border-radius: 6px;
+  outline: none;
+  background: #ffffff;
+  color: #26382f;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fusion-login-form input:focus {
+  border-color: #78917e;
+  box-shadow: 0 0 0 3px rgba(120, 145, 126, 0.12);
+}
+
+.fusion-login-form input::placeholder {
+  color: #a0aaa2;
+}
+
+.fusion-login-submit {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 3px;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #183c35;
+  border-radius: 6px;
+  background: #183c35;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.fusion-login-submit:hover {
+  background: #315c48;
+  transform: translateY(-1px);
+}
+
+.fusion-login-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.fusion-login-message {
+  margin: 15px 0 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.fusion-login-message.success {
+  color: #287347;
+}
+
+.fusion-login-message.error {
+  color: #b33a36;
+}
+
+.fusion-login-register {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e9e3;
+  color: #7b867e;
+  font-size: 12px;
+}
+
+.fusion-login-register a {
+  color: #315c48;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.fusion-login-register a:hover {
+  color: #183c35;
+  text-decoration: underline;
+}
+
+/* =================================
+   SHARED FOOTERS
+================================= */
+
+.fusion-register-footer,
+.fusion-login-footer {
+  min-height: 65px;
+  border-top: 1px solid #dfe4dc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  color: #89948b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+.fusion-register-page button:focus-visible,
+.fusion-login-page button:focus-visible,
+.fusion-register-page a:focus-visible,
+.fusion-login-page a:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.45);
+  outline-offset: 3px;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1000px) {
+  .fusion-register-main,
+  .fusion-login-main {
+    gap: 45px;
+  }
+
+  .fusion-register-options,
+  .fusion-login-panel {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 850px) {
+  .fusion-register-main,
+  .fusion-login-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 45px 0;
+  }
+
+  .fusion-register-intro h1,
+  .fusion-login-intro h1 {
+    font-size: clamp(48px, 9vw, 62px);
+    letter-spacing: -2px;
+  }
+
+  .fusion-register-intro p,
+  .fusion-login-intro > p {
+    max-width: 600px;
+  }
+
+  .fusion-register-options,
+  .fusion-login-panel {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .fusion-register-page,
+  .fusion-login-page {
+    padding: 0 5%;
+  }
+
+  .fusion-register-header,
+  .fusion-login-header {
+    min-height: 70px;
+  }
+
+  .fusion-register-brand,
+  .fusion-login-brand {
+    font-size: 18px;
+    gap: 9px;
+  }
+
+  .fusion-register-mark,
+  .fusion-login-mark {
+    width: 35px;
+    height: 35px;
+  }
+
+  .fusion-register-back,
+  .fusion-login-back {
+    font-size: 11px;
+  }
+
+  .fusion-register-main,
+  .fusion-login-main {
+    gap: 30px;
+    padding: 35px 0;
+  }
+
+  .fusion-register-intro h1,
+  .fusion-login-intro h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .fusion-register-intro p,
+  .fusion-login-intro > p {
+    font-size: 14px;
+  }
+
+  .fusion-register-options,
+  .fusion-login-panel {
+    padding: 24px 18px;
+  }
+
+  .fusion-register-options > h2,
+  .fusion-login-panel h2 {
+    font-size: 24px;
+  }
+
+  .fusion-register-option {
+    padding: 18px 14px;
+  }
+
+  .fusion-register-option h3 {
+    font-size: 17px;
+  }
+
+  .fusion-login-account-types {
+    grid-template-columns: 1fr;
+  }
+
+  .fusion-register-footer,
+  .fusion-login-footer {
+    min-height: 60px;
+    gap: 12px;
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+}
+
+@media (max-width: 350px) {
+  .fusion-register-intro h1,
+  .fusion-login-intro h1 {
+    font-size: 39px;
+  }
+
+  .fusion-register-options,
+  .fusion-login-panel {
+    padding: 20px 14px;
+  }
+
+  .fusion-register-footer,
+  .fusion-login-footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+}

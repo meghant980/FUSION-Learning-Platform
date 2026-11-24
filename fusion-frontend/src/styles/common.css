@@ -1,0 +1,107 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =================================
+   GLOBAL RESET
+================================= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =================================
+   GLOBAL PAGE SETTINGS
+================================= */
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "DM Sans", Arial, sans-serif;
+  background-color: #f7f7f3;
+  color: #26382f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =================================
+   HEADINGS
+================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Manrope", "DM Sans", Arial, sans-serif;
+  color: #203b30;
+}
+
+/* =================================
+   BUTTON DEFAULTS
+================================= */
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* =================================
+   FORM ELEMENT DEFAULTS
+================================= */
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* =================================
+   LINK DEFAULTS
+================================= */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =================================
+   MEDIA DEFAULTS
+================================= */
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* =================================
+   ROOT CONTAINER
+================================= */
+
+#root {
+  min-height: 100vh;
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-color: #78917e;
+}

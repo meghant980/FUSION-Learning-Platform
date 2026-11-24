@@ -1,0 +1,1049 @@
+
+/* =====================================================
+   FUSION STUDENT DESIGN SYSTEM
+   Warm Cream | Forest Green | Muted Sage
+===================================================== */
+
+:root {
+  --student-bg: #f7f7f3;
+  --student-white: #ffffff;
+  --student-forest: #183c35;
+  --student-forest-dark: #102d27;
+  --student-green: #315d4a;
+  --student-sage: #829680;
+  --student-sage-light: #b8c9b6;
+  --student-light-green: #eaf0e8;
+  --student-light-surface: #f1f4ed;
+  --student-border: #e2e9df;
+  --student-text: #303d35;
+  --student-muted: #718078;
+  --student-shadow: 0 8px 26px rgba(24, 60, 53, 0.055);
+}
+
+/* =====================================================
+   STUDENT DASHBOARD - PAGE
+===================================================== */
+
+.student-page {
+  min-height: 100vh;
+  background: var(--student-bg);
+  color: var(--student-text);
+  font-family: "DM Sans", "Poppins", sans-serif;
+}
+
+.student-page *,
+.student-content *,
+.student-learn-section * {
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   STUDENT DASHBOARD - HEADER
+===================================================== */
+
+.student-header {
+  position: relative;
+  overflow: hidden;
+  margin: 15px;
+  padding: 30px 40px;
+  border-radius: 15px;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 255, 255, 0.10),
+      transparent 32%
+    ),
+    var(--student-forest);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  box-shadow: 0 8px 24px rgba(24, 60, 53, 0.12);
+}
+
+.student-header::after {
+  content: "";
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  right: -70px;
+  top: -135px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 30px rgba(255, 255, 255, 0.025),
+    0 0 0 60px rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-left h1 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.header-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.profile-avatar {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eaf0e8;
+  color: var(--student-forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+.profile-info h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.profile-info p {
+  margin: 3px 0;
+  color: #d4e0d8;
+  font-size: 12px;
+}
+
+.profile-info span {
+  color: #b8c9b6;
+  font-size: 11px;
+}
+
+/* =====================================================
+   LOGOUT BUTTON
+===================================================== */
+
+.header-logout {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  color: var(--student-forest);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.header-logout:hover {
+  background: var(--student-light-green);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.logout-btn {
+  display: none;
+}
+
+/* =====================================================
+   DASHBOARD CONTENT
+===================================================== */
+
+.student-content {
+  position: relative;
+  padding: 25px 4%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.student-content > .section {
+  margin-top: 30px;
+}
+
+.student-content .section h2 {
+  margin-bottom: 18px;
+  color: var(--student-forest);
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+/* =====================================================
+   DASHBOARD CARDS
+===================================================== */
+
+.section-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.section-card {
+  flex: 1;
+  min-width: 280px;
+  background: var(--student-white);
+  padding: 23px;
+  border: 1px solid var(--student-border);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  color: var(--student-text);
+  box-shadow: var(--student-shadow);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9bda6;
+  background: #ffffff;
+  box-shadow: 0 13px 28px rgba(24, 60, 53, 0.09);
+}
+
+.card-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.card-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--student-light-green);
+  color: var(--student-forest);
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.section-card h3 {
+  margin: 0;
+  color: var(--student-forest);
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.section-card p {
+  margin: 5px 0 0;
+  color: var(--student-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.arrow {
+  flex-shrink: 0;
+  font-size: 22px;
+  color: var(--student-sage);
+  transition: 0.25s ease;
+}
+
+.section-card:hover .arrow {
+  transform: translateX(5px);
+  color: var(--student-forest);
+}
+
+/* =====================================================
+   STUDENT LEARNING SECTION
+===================================================== */
+
+.student-learn-section {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+}
+
+.student-learn-section h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--student-forest);
+  margin-bottom: 20px;
+}
+
+.student-learn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.student-learn-card {
+  min-height: 150px;
+  padding: 27px;
+  background: var(--student-white);
+  border: 1px solid var(--student-border);
+  border-radius: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  color: var(--student-text);
+  box-shadow: var(--student-shadow);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.student-learn-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9bda6;
+  box-shadow: 0 13px 28px rgba(24, 60, 53, 0.09);
+}
+
+.student-learn-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.student-learn-icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: var(--student-light-green);
+  border-radius: 12px;
+  color: var(--student-forest);
+  font-size: 28px;
+}
+
+.student-learn-card h3 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--student-forest);
+}
+
+.student-learn-card p {
+  margin-top: 7px;
+  margin-bottom: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--student-muted);
+  line-height: 1.6;
+}
+
+.student-learn-arrow {
+  flex-shrink: 0;
+  font-size: 22px;
+  color: var(--student-sage);
+  transition: transform 0.25s ease;
+}
+
+.student-learn-card:hover .student-learn-arrow {
+  transform: translateX(5px);
+  color: var(--student-forest);
+}
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.student-back-btn {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  left: auto;
+  bottom: auto;
+  z-index: 10;
+  background: var(--student-forest);
+  color: #ffffff;
+  border: 1px solid transparent;
+  padding: 12px 21px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 16px rgba(24, 60, 53, 0.12);
+  transition: 0.2s ease;
+}
+
+.student-back-btn:hover {
+  background: #285447;
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   FUSION BACKGROUND WORDMARK
+===================================================== */
+
+.student-content {
+  position: relative;
+}
+
+.student-fusion-bg {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(55px, 12vw, 120px);
+  font-weight: 800;
+  letter-spacing: 10px;
+  color: rgba(24, 60, 53, 0.035);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* =====================================================
+   STUDENT MCQ COMPONENTS
+===================================================== */
+
+.mcq-container {
+  background: var(--student-bg);
+  min-height: 100vh;
+  padding: 25px;
+}
+
+.mcq-box {
+  background: var(--student-white);
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 35px;
+  border: 1px solid var(--student-border);
+  border-radius: 13px;
+  box-shadow: var(--student-shadow);
+}
+
+.mcq-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--student-text);
+  background: #fbfcf9;
+  border: 1px solid var(--student-border);
+  border-radius: 8px;
+  margin-bottom: 18px;
+  outline: none;
+}
+
+.mcq-input:focus {
+  border-color: var(--student-sage);
+  box-shadow: 0 0 0 3px rgba(130, 150, 128, 0.1);
+}
+
+.mcq-btn {
+  background: var(--student-forest);
+  color: white;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mcq-btn:hover {
+  background: #285447;
+  transform: translateY(-2px);
+}
+
+.mcq-assignment-card {
+  background: var(--student-white);
+  max-width: 1000px;
+  margin: 25px auto;
+  padding: 30px;
+  border: 1px solid var(--student-border);
+  border-radius: 13px;
+  box-shadow: var(--student-shadow);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.mcq-assignment-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9bda6;
+}
+
+.option-label {
+  display: block;
+  padding: 15px;
+  margin-top: 12px;
+  background: #f8faf6;
+  border: 1px solid var(--student-border);
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--student-text);
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.option-label:hover {
+  background: var(--student-light-green);
+  border-color: #b5c9b1;
+}
+
+.option-label input {
+  margin-right: 10px;
+  accent-color: var(--student-forest);
+}
+
+.mcq-result {
+  background: #edf4eb;
+  color: var(--student-forest);
+  border: 1px solid #d7e5d3;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* =====================================================
+   STUDENT CODING PRACTICE
+===================================================== */
+
+.coding-container {
+  background: var(--student-bg);
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  color: var(--student-text);
+}
+
+.coding-fusion-header {
+  position: relative;
+  overflow: hidden;
+  background: var(--student-forest);
+  margin: 15px;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(24, 60, 53, 0.1);
+}
+
+.question-list {
+  margin-top: 40px;
+}
+
+.question-card {
+  background: var(--student-white);
+  color: var(--student-text);
+  padding: 27px;
+  border: 1px solid var(--student-border);
+  border-radius: 12px;
+  margin-bottom: 22px;
+  box-shadow: var(--student-shadow);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9bda6;
+  box-shadow: 0 13px 28px rgba(24, 60, 53, 0.08);
+}
+
+/* Two-panel coding workspace */
+
+.leetcode-layout {
+  display: flex;
+  gap: 22px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1 1 50%;
+  min-width: 0;
+  max-width: 50%;
+  background: var(--student-white);
+  padding: 25px;
+  min-height: 500px;
+  box-sizing: border-box;
+  border: 1px solid var(--student-border);
+  border-radius: 12px;
+  box-shadow: var(--student-shadow);
+  color: var(--student-text);
+}
+
+.question-desc {
+  color: #33453a !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.8;
+  margin-top: 18px;
+  opacity: 1 !important;
+}
+
+.sample-box {
+  background: var(--student-light-surface);
+  color: var(--student-text);
+  padding: 18px;
+  border: 1px solid var(--student-border);
+  border-radius: 9px;
+  margin-top: 15px;
+}
+
+/* Coding editor controls */
+
+.editor-top-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.language-select,
+.editor-utility-btn,
+.run-btn,
+.submit-btn,
+.back-btn {
+  min-height: 43px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.language-select {
+  background: #f7f8f4;
+  color: var(--student-forest);
+  border: 1px solid var(--student-border);
+}
+
+.editor-utility-btn {
+  background: var(--student-light-green);
+  color: var(--student-forest);
+  border: 1px solid var(--student-border);
+}
+
+.editor-utility-btn:hover {
+  background: #dfeadb;
+}
+
+.run-btn {
+  background: var(--student-forest);
+  color: #ffffff;
+  min-width: 130px;
+}
+
+.run-btn:hover {
+  background: #285447;
+  transform: translateY(-2px);
+}
+
+.submit-btn {
+  background: #315d4a;
+  color: #ffffff;
+  min-width: 130px;
+}
+
+.submit-btn.enabled {
+  background: #315d4a;
+  color: #ffffff;
+}
+
+.submit-btn.disabled,
+.submit-btn:disabled {
+  background: #bdcbbd;
+  color: #526358;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.back-btn {
+  background: var(--student-light-green);
+  color: var(--student-forest);
+  border: 1px solid var(--student-border);
+}
+
+.back-btn:hover {
+  background: #dfeadb;
+}
+
+.run-btn:hover,
+.submit-btn.enabled:hover,
+.back-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Coding evaluation */
+
+.results-box {
+  margin-top: 25px;
+  background: #edf4eb;
+  color: var(--student-forest);
+  padding: 25px;
+  border: 1px solid #d9e7d5;
+  border-radius: 12px;
+}
+
+.testcase-card {
+  background: var(--student-white);
+  color: var(--student-text);
+  padding: 16px;
+  border: 1px solid var(--student-border);
+  border-radius: 9px;
+  margin-top: 15px;
+}
+
+.bottom-evaluation-row {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+
+/* Evaluation step cards */
+
+.step-box-clean,
+.bottom-evaluation-row .results-box {
+  flex: 1;
+  min-width: 0;
+  background: var(--student-white);
+  color: var(--student-text);
+  border: 1px solid var(--student-border);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--student-shadow);
+}
+
+.step-box-clean {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.step-row-clean {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf0eb;
+  color: var(--student-text);
+}
+
+.total-clean {
+  margin-top: 20px;
+  text-align: right;
+  font-weight: 800;
+  color: var(--student-forest);
+  font-size: 21px;
+}
+
+/* =====================================================
+   STUDENT NOTES PAGE
+===================================================== */
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.note-card {
+  background: var(--student-white);
+  color: var(--student-text);
+  padding: 26px;
+  border: 1px solid var(--student-border);
+  border-radius: 13px;
+  box-shadow: var(--student-shadow);
+  transition: 0.25s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  border-color: #a9bda6;
+  box-shadow: 0 13px 28px rgba(24, 60, 53, 0.08);
+}
+
+.note-title {
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 13px;
+  color: var(--student-forest);
+}
+
+.note-meta {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--student-muted);
+}
+
+.note-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.note-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--student-forest);
+  color: #ffffff;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.note-btn:hover {
+  background: #285447;
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   ALIGNMENT AND COMMON STUDENT ELEMENTS
+===================================================== */
+
+.student-back-btn {
+  position: relative !important;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  left: auto !important;
+  bottom: auto !important;
+}
+
+.back-btn {
+  margin-left: auto;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+  .student-header {
+    padding: 26px 28px;
+  }
+
+  .student-content {
+    padding: 20px 3%;
+  }
+
+  .student-learn-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .leetcode-layout {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .bottom-evaluation-row {
+    flex-direction: column;
+  }
+
+  .step-box-clean,
+  .bottom-evaluation-row .results-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .student-header {
+    margin: 10px;
+    padding: 23px 20px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 12px;
+  }
+
+  .header-left h1 {
+    font-size: 21px;
+  }
+
+  .header-profile {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .header-logout {
+    margin-left: auto;
+  }
+
+  .student-content {
+    padding: 16px;
+  }
+
+  .student-content > .section {
+    margin-top: 23px;
+  }
+
+  .student-content .section h2,
+  .student-learn-section h2 {
+    font-size: 20px;
+  }
+
+  .section-grid {
+    flex-direction: column;
+  }
+
+  .section-card {
+    width: 100%;
+    min-width: 0;
+    padding: 19px;
+  }
+
+  .student-learn-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .student-learn-card {
+    min-height: 125px;
+    padding: 21px;
+  }
+
+  .student-learn-card h3 {
+    font-size: 19px;
+  }
+
+  .student-learn-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+
+  .mcq-container {
+    padding: 13px;
+  }
+
+  .mcq-box {
+    padding: 22px 17px;
+  }
+
+  .mcq-assignment-card {
+    padding: 21px 17px;
+  }
+
+  .coding-fusion-header {
+    margin: 10px;
+    padding: 25px 16px;
+    font-size: 24px;
+  }
+
+  .left-panel,
+  .right-panel {
+    padding: 17px;
+  }
+
+  .editor-top-row {
+    gap: 9px;
+  }
+
+  .run-btn,
+  .submit-btn {
+    flex: 1;
+    min-width: 110px;
+  }
+
+  .step-box-clean,
+  .bottom-evaluation-row .results-box {
+    padding: 18px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note-card {
+    padding: 21px;
+  }
+
+  .note-actions {
+    flex-direction: column;
+  }
+
+  .note-btn {
+    width: 100%;
+  }
+
+  .student-fusion-bg {
+    letter-spacing: 4px;
+  }
+}
+
+@media (max-width: 380px) {
+  .profile-info h4 {
+    font-size: 13px;
+  }
+
+  .header-logout {
+    padding: 9px 13px;
+  }
+
+  .student-learn-card {
+    padding: 17px;
+  }
+
+  .student-learn-left {
+    gap: 10px;
+  }
+
+  .student-learn-card h3 {
+    font-size: 17px;
+  }
+
+  .card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+}

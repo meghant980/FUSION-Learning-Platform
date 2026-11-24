@@ -1,0 +1,19 @@
+FUSION WEBSITE FEEDBACK FEATURE
+
+Student:
+- Open Student Dashboard and choose "Give feedback".
+- Submit a 1-5 star rating, category and written message.
+- Student identity (name/email/roll number) is taken from the authenticated account.
+- Students can view their own previous submissions.
+
+Admin:
+- Open Admin Dashboard and choose "View Student Feedback".
+- View submitted feedback, ratings, category, student details and summary counts.
+- Seeded demonstration records, if added later, are labelled by source in admin view.
+
+Backend:
+- POST /api/feedback (authenticated student)
+- GET /api/feedback/mine (authenticated user)
+- GET /api/feedback/admin (admin only)
+
+No Google Form is used. Feedback is stored in the connected MongoDB database.

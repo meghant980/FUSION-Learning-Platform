@@ -1,0 +1,426 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =================================
+   SHARED SETTINGS
+================================= */
+
+.home-page {
+  min-height: 100vh;
+  padding: 0 7%;
+  background: #f7f7f3;
+  color: #26382f;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+  box-sizing: border-box;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.home-header {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #dfe4dc;
+}
+
+.home-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Manrope", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #183c35;
+}
+
+.brand-mark {
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #183c35;
+  color: #ffffff;
+  font-size: 21px;
+  border-radius: 5px;
+}
+
+.header-right {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #65766b;
+}
+
+.header-right span {
+  color: #9caa9e;
+  padding: 0 7px;
+}
+
+/* =================================
+   MAIN LAYOUT
+================================= */
+
+.home-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 75px 0;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 100px;
+}
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.home-eyebrow {
+  color: #638274;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 27px;
+}
+
+.home-eyebrow span {
+  color: #a1aaa0;
+}
+
+.home-intro h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(55px, 7vw, 86px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -5px;
+  margin: 0;
+  color: #203b30;
+}
+
+.home-intro h1 span {
+  color: #8a9b85;
+}
+
+.home-intro p {
+  max-width: 470px;
+  margin-top: 27px;
+  color: #69766d;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.home-languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 43px;
+}
+
+.home-languages span {
+  border: 1px solid #dce3da;
+  border-radius: 5px;
+  padding: 9px 13px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #536c5d;
+  background: #ffffff;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.home-languages span:hover {
+  background: #eaf0e8;
+  border-color: #b8c9b6;
+}
+
+/* =================================
+   ACCESS SECTION
+================================= */
+
+.home-access {
+  width: 100%;
+  min-width: 0;
+}
+
+.access-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #dce2da;
+  color: #718077;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.home-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 5px;
+  border-bottom: 1px solid #dce2da;
+  text-decoration: none;
+  color: #26382f;
+  transition: padding 0.25s ease, background 0.25s ease;
+}
+
+.home-option:hover {
+  padding-left: 16px;
+  padding-right: 16px;
+  background: #eef2eb;
+}
+
+.home-option > div:first-child {
+  min-width: 0;
+}
+
+.home-option small {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #809087;
+}
+
+.home-option h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 29px;
+  margin: 9px 0 5px;
+  font-weight: 700;
+  color: #254638;
+}
+
+.home-option p {
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+  color: #7b867e;
+}
+
+.option-arrow {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d8e0d6;
+  border-radius: 50%;
+  color: #315c48;
+  font-size: 22px;
+  transition: background 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease;
+}
+
+.home-option:hover .option-arrow {
+  background: #214d40;
+  color: #ffffff;
+  border-color: #214d40;
+  transform: translateX(3px);
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.home-footer {
+  min-height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid #dfe4dc;
+  color: #89948b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+.home-page a:focus-visible {
+  outline: 3px solid rgba(120, 145, 126, 0.45);
+  outline-offset: 4px;
+}
+
+/* =================================
+   TABLET RESPONSIVENESS
+================================= */
+
+@media (max-width: 1000px) {
+  .home-main {
+    gap: 55px;
+  }
+}
+
+@media (max-width: 850px) {
+  .home-page {
+    padding: 0 6%;
+  }
+
+  .home-main {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    padding: 55px 0;
+  }
+
+  .home-intro h1 {
+    font-size: clamp(52px, 9vw, 68px);
+    letter-spacing: -3px;
+  }
+
+  .home-intro p {
+    max-width: 600px;
+  }
+
+  .home-access {
+    max-width: 650px;
+  }
+}
+
+/* =================================
+   MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 500px) {
+  .home-page {
+    padding: 0 5%;
+  }
+
+  .home-header {
+    min-height: 72px;
+  }
+
+  .home-brand {
+    font-size: 19px;
+    gap: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 19px;
+  }
+
+  .header-right {
+    font-size: 8px;
+    letter-spacing: 0.7px;
+    text-align: right;
+  }
+
+  .header-right span {
+    padding: 0 3px;
+  }
+
+  .home-main {
+    gap: 38px;
+    padding: 40px 0;
+  }
+
+  .home-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    margin-bottom: 20px;
+  }
+
+  .home-intro h1 {
+    font-size: 49px;
+    letter-spacing: -2px;
+  }
+
+  .home-intro p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 20px;
+  }
+
+  .home-languages {
+    gap: 8px;
+    margin-top: 28px;
+  }
+
+  .home-languages span {
+    padding: 8px 10px;
+    font-size: 9px;
+  }
+
+  .access-heading {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+
+  .home-option {
+    padding: 22px 3px;
+    gap: 12px;
+  }
+
+  .home-option:hover {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .home-option h2 {
+    font-size: 24px;
+  }
+
+  .home-option p {
+    font-size: 12px;
+  }
+
+  .option-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+  }
+
+  .home-footer {
+    min-height: 60px;
+    gap: 12px;
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+}
+
+/* =================================
+   EXTRA SMALL MOBILE SCREENS
+================================= */
+
+@media (max-width: 350px) {
+  .home-intro h1 {
+    font-size: 41px;
+  }
+
+  .home-brand {
+    font-size: 16px;
+  }
+
+  .header-right {
+    font-size: 7px;
+  }
+
+  .home-footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 12px 0;
+  }
+}
