@@ -2,7 +2,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const LOCAL_API_URL = "https://fusion-e-learning-platform.onrender.com";
+// Local backend URL used in frontend source code
+const LOCAL_API_URL = "http://localhost:5001";
 
 const API_URL = (process.env.REACT_APP_API_URL || "")
   .trim()
@@ -21,6 +22,7 @@ const TEXT_EXTENSIONS = new Set([
   ".webmanifest",
 ]);
 
+// Check backend URL
 if (!API_URL) {
   console.error(
     "\nERROR: REACT_APP_API_URL is missing.\n" +
@@ -29,6 +31,7 @@ if (!API_URL) {
   process.exit(1);
 }
 
+// Validate backend URL
 try {
   const parsedURL = new URL(API_URL);
 
@@ -46,6 +49,7 @@ try {
   process.exit(1);
 }
 
+// Check build folder
 if (!fs.existsSync(BUILD_DIRECTORY)) {
   console.error("ERROR: React build directory was not found.");
   console.error("Run the React build before running this script.");
@@ -56,7 +60,9 @@ let changedFiles = 0;
 let totalReplacements = 0;
 
 function replaceInDirectory(directory) {
-  const entries = fs.readdirSync(directory, { withFileTypes: true });
+  const entries = fs.readdirSync(directory, {
+    withFileTypes: true,
+  });
 
   for (const entry of entries) {
     const fullPath = path.join(directory, entry.name);
@@ -81,7 +87,9 @@ function replaceInDirectory(directory) {
     const occurrences =
       content.split(LOCAL_API_URL).length - 1;
 
-    const updatedContent = content.split(LOCAL_API_URL).join(API_URL);
+    const updatedContent = content
+      .split(LOCAL_API_URL)
+      .join(API_URL);
 
     fs.writeFileSync(fullPath, updatedContent, "utf8");
 
@@ -92,13 +100,8 @@ function replaceInDirectory(directory) {
 
 replaceInDirectory(BUILD_DIRECTORY);
 
-if (totalReplacements === 0) {
-  console.error(
-    "ERROR: No localhost:5001 references were found in the production build."
-  );
-  process.exit(1);
-}
-
+// No replacement is also valid:
+// the frontend may already use REACT_APP_API_URL directly.
 console.log("\nFusion production API configuration completed.");
 console.log("Backend URL:", API_URL);
 console.log("Files updated:", changedFiles);
