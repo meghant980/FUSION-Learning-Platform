@@ -1,7 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
 
-import Assignment from "../models/Assignment.js";
 import Performance from "../models/Performance.js";
 
 import {
@@ -20,58 +19,104 @@ import {
   getStudentSubmissions,
 } from "../controllers/assignmentController.js";
 
+import {
+  gradeSubjectiveSubmission,
+  viewSubjectiveSubmissionFile,
+} from "../controllers/subjectiveGradingController.js";
+
 const router = express.Router();
 
-// MCQ assignment creation and listing
+// CREATE MCQ ASSIGNMENT
 router.post("/create", createAssignment);
-router.get("/student", getAssignment);
-router.get("/unit/:unit", getAssignmentsByUnit);
-router.get("/", getAllAssignments);
 
-// Check whether a student has already attempted an assignment
+// GET ASSIGNMENTS FOR STUDENT
+router.get("/student", getAssignment);
+
+// GET ASSIGNMENTS BY UNIT
+router.get("/unit/:unit", getAssignmentsByUnit);
+
+// GET ALL ASSIGNMENTS
+router.get("/all", getAllAssignments);
+
+// CHECK PREVIOUS ATTEMPT
 router.post("/check", async (req, res) => {
   try {
-    const { rollNumber, assignmentId } = req.body || {};
+    const { rollNumber, assignmentId } = req.body;
 
-    if (!rollNumber?.trim() || !mongoose.Types.ObjectId.isValid(assignmentId)) {
+    if (!rollNumber || !assignmentId) {
       return res.status(400).json({
         success: false,
-        message: "Valid roll number and assignment ID are required.",
+        message: "Roll number and assignment ID are required.",
       });
     }
 
-    const existing = await Performance.findOne({
-      rollNumber: rollNumber.trim(),
-      assignmentId,
-    }).select("_id");
+    if (!mongoose.Types.ObjectId.isValid(assignmentId)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid assignment ID.",
+      });
+    }
 
-    return res.json({ success: true, attempted: Boolean(existing) });
+    const performance = await Performance.findOne({
+      rollNumber: String(rollNumber).trim(),
+      assignmentId,
+    });
+
+    return res.status(200).json({
+      success: true,
+      attempted: Boolean(performance),
+      performance,
+    });
   } catch (error) {
-    console.error("Check assignment attempt:", error);
+    console.error("Check assignment error:", error);
+
     return res.status(500).json({
       success: false,
-      message: "Unable to check previous attempt.",
+      message: "Failed to check assignment.",
     });
   }
 });
 
-// Existing performance endpoints
+// SAVE MCQ PERFORMANCE
 router.post("/performance", savePerformance);
-router.get("/performance", getAllPerformances);
-router.get("/performance/:assignmentId", (req, res, next) => {
-  req.query.assignmentId = req.params.assignmentId;
-  next();
-}, getAllPerformances);
 
-// Delete an assignment
+// GET MCQ PERFORMANCE
+router.get("/performance", getAllPerformances);
+
+// GET PERFORMANCE BY ASSIGNMENT
+router.get("/performance/:assignmentId", getAllPerformances);
+
+// DELETE ASSIGNMENT
 router.delete("/:id", deleteAssignment);
 
-// Subjective assignments — preserve existing functionality
-router.post("/subjective", createSubjectiveAssignment);
+// CREATE SUBJECTIVE ASSIGNMENT
+router.post("/subjective/create", createSubjectiveAssignment);
+
+// UPDATE SUBJECTIVE ASSIGNMENT
 router.put("/subjective/:id", updateSubjectiveAssignment);
-router.get("/subjective/student", getSubjectiveAssignmentsForStudent);
+
+// GET SUBJECTIVE ASSIGNMENTS FOR STUDENT
+router.get(
+  "/subjective/student",
+  getSubjectiveAssignmentsForStudent
+);
+
+// SUBMIT SUBJECTIVE ANSWER
 router.post("/subjective/submit", submitSubjectiveAnswer);
+
+// GET SUBJECTIVE RESULTS
 router.get("/subjective/results", getSubjectiveResults);
+
+// GET STUDENT SUBJECTIVE SUBMISSIONS
 router.get("/subjective/submissions", getStudentSubmissions);
+
+// GRADE SUBJECTIVE SUBMISSION
+router.put("/subjective/grade/:id", gradeSubjectiveSubmission);
+
+// VIEW SUBJECTIVE SUBMISSION FILE
+router.get(
+  "/subjective/file/:id",
+  viewSubjectiveSubmissionFile
+);
 
 export default router;
