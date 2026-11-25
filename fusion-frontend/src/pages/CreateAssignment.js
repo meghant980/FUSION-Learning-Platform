@@ -4,7 +4,8 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../styles/teacher.css";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5001";
+const API_URL =
+  process.env.REACT_APP_API_URL || "http://localhost:5001";
 
 const languages = {
   c: "C",
@@ -33,9 +34,12 @@ export default function CreateAssignment() {
   const query = new URLSearchParams(location.search);
 
   const requestedSubject = query.get("subject")?.toLowerCase();
-  const subject = languages[requestedSubject] ? requestedSubject : "c";
+  const subject = languages[requestedSubject]
+    ? requestedSubject
+    : "c";
 
   const requestedUnit = Number(query.get("unit") || 1);
+
   const defaultUnit =
     Number.isInteger(requestedUnit) &&
     requestedUnit >= 1 &&
@@ -44,6 +48,7 @@ export default function CreateAssignment() {
       : 1;
 
   const user = getUser();
+
   const sections = Array.isArray(user?.sections)
     ? user.sections
     : [];
@@ -67,7 +72,7 @@ export default function CreateAssignment() {
 
   const languageLabel = languages[subject];
 
-  // ================= QUESTION HANDLERS =================
+  // QUESTION HANDLERS
 
   const handleQuestionChange = (index, value) => {
     setQuestions((previous) =>
@@ -85,8 +90,9 @@ export default function CreateAssignment() {
         questionIndex === qIndex
           ? {
               ...question,
-              options: question.options.map((option, optionIndex) =>
-                optionIndex === optIndex ? value : option
+              options: question.options.map(
+                (option, optionIndex) =>
+                  optionIndex === optIndex ? value : option
               ),
             }
           : question
@@ -104,7 +110,7 @@ export default function CreateAssignment() {
     );
   };
 
-  // ================= VALIDATION =================
+  // FORM VALIDATION
 
   const validateForm = () => {
     if (!title.trim()) {
@@ -144,7 +150,9 @@ export default function CreateAssignment() {
         option.trim().toLowerCase()
       );
 
-      const normalizedAnswer = question.correctAnswer.trim().toLowerCase();
+      const normalizedAnswer = question.correctAnswer
+        .trim()
+        .toLowerCase();
 
       if (!normalizedOptions.includes(normalizedAnswer)) {
         return `Correct answer in Question ${i + 1} must match one of its options!`;
@@ -154,11 +162,11 @@ export default function CreateAssignment() {
     return null;
   };
 
-  // ================= NAVIGATION AFTER PUBLISH =================
+  // NAVIGATION AFTER PUBLISH
 
   const goBackToTeacherUnit = () => {
     if (subject === "cpp") {
-      navigate(`/teacher/cpp/unit/${unit}`);
+      navigate(`/teacher/cpp/unit${unit}`);
       return;
     }
 
@@ -170,7 +178,7 @@ export default function CreateAssignment() {
     navigate(`/teacher/${subject}/unit/${unit}`);
   };
 
-  // ================= SUBMIT =================
+  // SUBMIT ASSIGNMENT
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -193,11 +201,13 @@ export default function CreateAssignment() {
         title: title.trim(),
         description: description.trim(),
         deadline,
+
         questions: questions.map((question) => ({
           questionText: question.questionText.trim(),
           options: question.options.map((option) => option.trim()),
           correctAnswer: question.correctAnswer.trim(),
         })),
+
         teacherId: user?._id || user?.id,
         section,
       };
@@ -228,12 +238,13 @@ export default function CreateAssignment() {
     }
   };
 
-  // ================= UI =================
+  // UI
 
   return (
     <div className="unit-page">
       <div className="unit-header">
         <h2>🧩 Create {languageLabel} MCQ Assignment</h2>
+
         <p>
           Create an objective assignment for {languageLabel}, Unit {unit}.
         </p>
@@ -248,7 +259,9 @@ export default function CreateAssignment() {
               <select
                 className="modern-input"
                 value={unit}
-                onChange={(event) => setUnit(Number(event.target.value))}
+                onChange={(event) =>
+                  setUnit(Number(event.target.value))
+                }
               >
                 <option value={1}>Unit 1</option>
                 <option value={2}>Unit 2</option>
@@ -259,7 +272,9 @@ export default function CreateAssignment() {
               <select
                 className="modern-input"
                 value={section}
-                onChange={(event) => setSection(event.target.value)}
+                onChange={(event) =>
+                  setSection(event.target.value)
+                }
               >
                 <option value="">Select Section</option>
 
@@ -271,14 +286,16 @@ export default function CreateAssignment() {
               </select>
             </div>
 
-            {/* TITLE */}
+            {/* ASSIGNMENT TITLE */}
 
             <input
               className="modern-input"
               type="text"
               placeholder="Assignment Title"
               value={title}
-              onChange={(event) => setTitle(event.target.value)}
+              onChange={(event) =>
+                setTitle(event.target.value)
+              }
             />
 
             {/* DEADLINE */}
@@ -287,7 +304,9 @@ export default function CreateAssignment() {
               className="modern-input"
               type="datetime-local"
               value={deadline}
-              onChange={(event) => setDeadline(event.target.value)}
+              onChange={(event) =>
+                setDeadline(event.target.value)
+              }
             />
 
             {/* DESCRIPTION */}
@@ -296,23 +315,30 @@ export default function CreateAssignment() {
               className="modern-input"
               placeholder="Description"
               value={description}
-              onChange={(event) => setDescription(event.target.value)}
+              onChange={(event) =>
+                setDescription(event.target.value)
+              }
             />
 
-            {/* QUESTIONS */}
+            {/* MCQ QUESTIONS */}
 
             {questions.map((question, index) => (
               <div key={index} className="question-block">
-                <h3>Q{index + 1}</h3>
+                <h3>Question {index + 1}</h3>
 
                 <textarea
                   className="modern-input"
-                  placeholder="Enter Question"
+                  placeholder={`Enter Question ${index + 1}`}
                   value={question.questionText}
                   onChange={(event) =>
-                    handleQuestionChange(index, event.target.value)
+                    handleQuestionChange(
+                      index,
+                      event.target.value
+                    )
                   }
                 />
+
+                {/* FOUR OPTIONS */}
 
                 <div className="options-grid">
                   {question.options.map((option, optionIndex) => (
@@ -332,23 +358,32 @@ export default function CreateAssignment() {
                   ))}
                 </div>
 
+                {/* CORRECT ANSWER */}
+
                 <input
                   className="modern-input"
-                  placeholder="Correct Answer"
+                  placeholder="Enter Correct Answer (must match an option)"
                   value={question.correctAnswer}
                   onChange={(event) =>
-                    handleCorrectAnswerChange(index, event.target.value)
+                    handleCorrectAnswerChange(
+                      index,
+                      event.target.value
+                    )
                   }
                 />
               </div>
             ))}
+
+            {/* PUBLISH */}
 
             <button
               className="submit-btn"
               type="submit"
               disabled={saving}
             >
-              {saving ? "Publishing..." : "🚀 Publish Assignment"}
+              {saving
+                ? "Publishing..."
+                : "🚀 Publish Assignment"}
             </button>
           </form>
 
