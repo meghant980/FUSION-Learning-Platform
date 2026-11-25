@@ -1,62 +1,114 @@
 
 import mongoose from "mongoose";
 
-const performanceSchema = new mongoose.Schema({
-  studentName: {
-    type: String,
-    required: true,
-  },
+const performanceSchema = new mongoose.Schema(
+  {
+    studentName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
-  rollNumber: {
-    type: String,
-    required: true,
-  },
+    rollNumber: {
+      type: String,
+      required: true,
+      trim: true,
+    },
 
-  correct: {
-    type: Number,
-    required: true,
-  },
+    // Student's individual answers in question order
+    answers: {
+      type: [String],
+      default: [],
+    },
 
-  wrong: {
-    type: Number,
-    required: true,
-  },
+    correct: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
 
-  accuracy: {
-    type: Number,
-    required: true,
-  },
+    wrong: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
 
-  unit: {
-    type: String,
-    default: "Unit 1",
-  },
+    accuracy: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
 
-  section: {
-    type: String,
-    required: true,
-  },
+    totalQuestions: {
+      type: Number,
+      default: 0,
+    },
 
-  // Connects each performance record to its assignment.
-  assignmentId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Assignment",
-    required: false,
-  },
+    unit: {
+      type: String,
+      default: "Unit 1",
+    },
 
-  // Supports all five programming languages.
-  subject: {
-    type: String,
-    enum: ["c", "cpp", "java", "python", "javascript"],
-    lowercase: true,
-    trim: true,
-    default: "c",
-  },
+    section: {
+      type: String,
+      required: true,
+    },
 
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-});
+    assignmentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Assignment",
+      required: false,
+    },
 
-export default mongoose.model("Performance", performanceSchema);
+    subject: {
+      type: String,
+      enum: ["c", "cpp", "java", "python", "javascript"],
+      lowercase: true,
+      trim: true,
+      default: "c",
+    },
+
+    // Quiz timing information
+    durationMinutes: {
+      type: Number,
+      min: 1,
+      default: 10,
+    },
+
+    startedAt: {
+      type: Date,
+      default: null,
+    },
+
+    expiresAt: {
+      type: Date,
+      default: null,
+    },
+
+    submittedAt: {
+      type: Date,
+      default: null,
+    },
+
+    // Existing records remain submitted by default
+    status: {
+      type: String,
+      enum: ["in_progress", "submitted", "auto_submitted"],
+      default: "submitted",
+    },
+
+    date: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const Performance =
+  mongoose.models.Performance ||
+  mongoose.model("Performance", performanceSchema);
+
+export default Performance;
