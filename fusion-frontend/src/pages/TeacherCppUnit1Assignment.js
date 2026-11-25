@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,20 +9,20 @@ export default function TeacherCppUnit2Assignment() {
     {
       icon: "✳",
       title: "Create Assignment",
-      description: "Create a new assignment for C++ Unit 1 students.",
-      path: "/teacher/create-assignment?unit=1&subject=cpp",
+      description: "Create a new MCQ assignment for C++ Unit 2 students.",
+      path: "/teacher/create-assignment?unit=2&subject=cpp",
     },
     {
       icon: "📁",
       title: "Manage Assignments",
-      description: "View and manage previously created assignments.",
-      path: "/teacher/cpp/unit1/assignment-manage?unit=1",
+      description: "View and manage previously created Unit 2 assignments.",
+      path: "/teacher/cpp/unit2/assignment-manage?unit=2",
     },
     {
       icon: "📊",
       title: "View Assignment Results",
-      description: "Review student submissions and performance.",
-      path: "/teacher/cpp/unit1/results",
+      description: "Review C++ Unit 2 student submissions and performance.",
+      path: "/teacher/cpp/unit2/results",
     },
   ];
 
@@ -30,17 +31,19 @@ export default function TeacherCppUnit2Assignment() {
       <div style={styles.container}>
         <button
           style={styles.backButton}
-          onClick={() => navigate("/teacher/cpp/unit1")}
+          onClick={() => navigate("/teacher/cpp/unit2")}
         >
-          ← Back to C++ Unit 1
+          ← Back to C++ Unit 2
         </button>
 
         <header style={styles.header}>
           <div style={styles.eyebrow}>TEACHER WORKSPACE · C++</div>
-          <h1 style={styles.heading}>Unit 1 Assignments</h1>
+
+          <h1 style={styles.heading}>Unit 2 Assignments</h1>
+
           <p style={styles.subtitle}>
-            Create assignments, manage existing work and review student
-            performance for C++ Unit 1.
+            Create MCQ assignments, manage existing assignments and
+            review student performance for C++ Unit 2.
           </p>
         </header>
 
@@ -50,6 +53,7 @@ export default function TeacherCppUnit2Assignment() {
           {sections.map((section) => (
             <button
               key={section.title}
+              type="button"
               style={styles.card}
               onClick={() => navigate(section.path)}
               onMouseEnter={(e) => {
@@ -66,8 +70,13 @@ export default function TeacherCppUnit2Assignment() {
               }}
             >
               <div style={styles.iconBox}>{section.icon}</div>
+
               <h3 style={styles.cardTitle}>{section.title}</h3>
-              <p style={styles.cardDescription}>{section.description}</p>
+
+              <p style={styles.cardDescription}>
+                {section.description}
+              </p>
+
               <div style={styles.cardFooter}>
                 <span>Open section</span>
                 <span>→</span>
@@ -88,10 +97,12 @@ const styles = {
     boxSizing: "border-box",
     fontFamily: "'DM Sans', sans-serif",
   },
+
   container: {
     maxWidth: "1150px",
     margin: "0 auto",
   },
+
   backButton: {
     background: "transparent",
     border: "1px solid #d9e2d8",
@@ -103,6 +114,7 @@ const styles = {
     cursor: "pointer",
     marginBottom: "34px",
   },
+
   header: {
     background: "#183c35",
     borderRadius: "18px",
@@ -110,6 +122,7 @@ const styles = {
     color: "#ffffff",
     marginBottom: "32px",
   },
+
   eyebrow: {
     color: "#c5d4c2",
     fontSize: "11px",
@@ -117,28 +130,33 @@ const styles = {
     letterSpacing: "2px",
     marginBottom: "12px",
   },
+
   heading: {
     fontSize: "clamp(27px, 4vw, 36px)",
     fontWeight: 700,
     margin: "0 0 12px",
   },
+
   subtitle: {
     color: "#dce7dc",
     fontSize: "15px",
     lineHeight: 1.7,
     margin: 0,
   },
+
   sectionTitle: {
     color: "#183c35",
     fontSize: "21px",
     fontWeight: 700,
     margin: "0 0 20px",
   },
+
   grid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
     gap: "20px",
   },
+
   card: {
     textAlign: "left",
     background: "#ffffff",
@@ -153,6 +171,7 @@ const styles = {
     boxShadow: "0 4px 14px rgba(24, 60, 53, 0.04)",
     fontFamily: "inherit",
   },
+
   iconBox: {
     width: "48px",
     height: "48px",
@@ -164,12 +183,14 @@ const styles = {
     fontSize: "23px",
     marginBottom: "18px",
   },
+
   cardTitle: {
     color: "#183c35",
     fontSize: "17px",
     fontWeight: 700,
     margin: "0 0 9px",
   },
+
   cardDescription: {
     color: "#718075",
     fontSize: "13px",
@@ -177,6 +198,7 @@ const styles = {
     margin: "0 0 20px",
     flex: 1,
   },
+
   cardFooter: {
     display: "flex",
     alignItems: "center",
