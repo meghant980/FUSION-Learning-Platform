@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -80,30 +81,34 @@ export default function TeacherCppUnit4Assignment() {
     <div style={styles.page}>
       <div style={styles.container}>
         <div style={styles.header}>
-          <div style={styles.eyebrow}>TEACHER PANEL / C++ / UNIT 4</div>
+          <div style={styles.eyebrow}>
+            TEACHER PANEL / C++ / UNIT 4
+          </div>
 
           <h1 style={styles.title}>C++ Unit 4 – Assignments</h1>
 
           <p style={styles.description}>
-            Create assignments, manage existing work, and review student
-            performance for C++ Unit 4.
+            Create MCQ assignments, manage existing assignments,
+            and review student responses and performance for C++ Unit 4.
           </p>
         </div>
 
         <div style={styles.grid}>
           <button
+            type="button"
             style={styles.button}
             onClick={() =>
               navigate("/teacher/create-assignment?unit=4&subject=cpp")
             }
           >
-            ✳ Create Assignment
+            ✳ Create MCQ Assignment
             <span style={styles.buttonText}>
-              Prepare and publish a new assignment
+              Add questions, four options and correct answers.
             </span>
           </button>
 
           <button
+            type="button"
             style={styles.button}
             onClick={() =>
               navigate("/teacher/cpp/unit4/assignment-manage?unit=4")
@@ -111,22 +116,24 @@ export default function TeacherCppUnit4Assignment() {
           >
             📁 Manage Assignments
             <span style={styles.buttonText}>
-              View and manage existing assignments
+              View and manage existing Unit 4 assignments.
             </span>
           </button>
 
           <button
+            type="button"
             style={styles.button}
             onClick={() => navigate("/teacher/cpp/unit4/results")}
           >
             📊 View Assignment Results
             <span style={styles.buttonText}>
-              Review student submissions and performance
+              Review student submissions and performance.
             </span>
           </button>
         </div>
 
         <button
+          type="button"
           style={styles.back}
           onClick={() => navigate("/teacher/cpp/unit4")}
         >
