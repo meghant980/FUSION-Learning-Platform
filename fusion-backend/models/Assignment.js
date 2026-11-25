@@ -57,6 +57,14 @@ const assignmentSchema = new mongoose.Schema(
       default: "quiz",
     },
 
+    // Quiz duration in minutes
+    durationMinutes: {
+      type: Number,
+      min: 1,
+      max: 180,
+      default: 10,
+    },
+
     deadline: {
       type: Date,
       default: null,
@@ -112,7 +120,11 @@ const assignmentSchema = new mongoose.Schema(
   }
 );
 
-assignmentSchema.index({ subject: 1, unit: 1, type: 1 });
+assignmentSchema.index({
+  subject: 1,
+  unit: 1,
+  type: 1,
+});
 
 const Assignment =
   mongoose.models.Assignment ||
