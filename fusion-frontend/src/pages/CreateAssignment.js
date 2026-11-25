@@ -15,12 +15,17 @@ const languages = {
   javascript: "JavaScript",
 };
 
+const createEmptyQuestion = () => ({
+  questionText: "",
+  options: ["", "", "", ""],
+  correctAnswer: "",
+});
+
 const getUser = () => {
   try {
     const rawUser = JSON.parse(
       localStorage.getItem("fusionUser") || "{}"
     );
-
     return rawUser?.user || rawUser || {};
   } catch {
     return {};
@@ -58,60 +63,81 @@ export default function CreateAssignment() {
   const [deadline, setDeadline] = useState("");
   const [description, setDescription] = useState("");
   const [section, setSection] = useState("");
+  const [durationMinutes, setDurationMinutes] = useState(10);
 
-  const [questions, setQuestions] = useState(() =>
-    Array.from({ length: 10 }, () => ({
-      questionText: "",
-      options: ["", "", "", ""],
-      correctAnswer: "",
-    }))
-  );
+  const [questions, setQuestions] = useState([
+    createEmptyQuestion(),
+  ]);
 
   const [msg, setMsg] = useState("");
   const [saving, setSaving] = useState(false);
 
   const languageLabel = languages[subject];
 
-  // QUESTION HANDLERS
+  // ADD QUESTION
+  const addQuestion = () => {
+    setQuestions((previous) => [
+      ...previous,
+      createEmptyQuestion(),
+    ]);
+  };
 
+  // REMOVE QUESTION
+  const removeQuestion = (index) => {
+    if (questions.length === 1) {
+      setMsg("At least one question is required.");
+      return;
+    }
+
+    setQuestions((previous) =>
+      previous.filter((_, i) => i !== index)
+    );
+    setMsg("");
+  };
+
+  // CHANGE QUESTION TEXT
   const handleQuestionChange = (index, value) => {
     setQuestions((previous) =>
-      previous.map((question, questionIndex) =>
-        questionIndex === index
+      previous.map((question, i) =>
+        i === index
           ? { ...question, questionText: value }
           : question
       )
     );
   };
 
+  // CHANGE OPTION
   const handleOptionChange = (qIndex, optIndex, value) => {
     setQuestions((previous) =>
-      previous.map((question, questionIndex) =>
-        questionIndex === qIndex
+      previous.map((question, i) =>
+        i === qIndex
           ? {
               ...question,
-              options: question.options.map(
-                (option, optionIndex) =>
-                  optionIndex === optIndex ? value : option
+              options: question.options.map((option, j) =>
+                j === optIndex ? value : option
               ),
+              correctAnswer:
+                question.correctAnswer === question.options[optIndex]
+                  ? ""
+                  : question.correctAnswer,
             }
           : question
       )
     );
   };
 
+  // CHANGE CORRECT ANSWER
   const handleCorrectAnswerChange = (index, value) => {
     setQuestions((previous) =>
-      previous.map((question, questionIndex) =>
-        questionIndex === index
+      previous.map((question, i) =>
+        i === index
           ? { ...question, correctAnswer: value }
           : question
       )
     );
   };
 
-  // FORM VALIDATION
-
+  // VALIDATE FORM
   const validateForm = () => {
     if (!title.trim()) {
       return "Assignment title cannot be empty!";
@@ -125,8 +151,26 @@ export default function CreateAssignment() {
       return "Deadline is required!";
     }
 
+    if (new Date(deadline).getTime() <= Date.now()) {
+      return "Please select a future deadline!";
+    }
+
     if (!section) {
       return "Please select a section!";
+    }
+
+    const duration = Number(durationMinutes);
+
+    if (
+      !Number.isInteger(duration) ||
+      duration < 1 ||
+      duration > 180
+    ) {
+      return "Quiz duration must be between 1 and 180 minutes!";
+    }
+
+    if (!questions.length) {
+      return "At least one question is required!";
     }
 
     for (let i = 0; i < questions.length; i++) {
@@ -136,26 +180,26 @@ export default function CreateAssignment() {
         return `Question ${i + 1} is empty!`;
       }
 
-      for (let j = 0; j < question.options.length; j++) {
-        if (!question.options[j].trim()) {
+      for (let j = 0; j < 4; j++) {
+        if (!question.options[j]?.trim()) {
           return `Option ${j + 1} of Question ${i + 1} is empty!`;
         }
       }
 
       if (!question.correctAnswer.trim()) {
-        return `Correct answer missing in Question ${i + 1}!`;
+        return `Please select the correct answer for Question ${i + 1}!`;
       }
 
       const normalizedOptions = question.options.map((option) =>
         option.trim().toLowerCase()
       );
 
-      const normalizedAnswer = question.correctAnswer
-        .trim()
-        .toLowerCase();
-
-      if (!normalizedOptions.includes(normalizedAnswer)) {
-        return `Correct answer in Question ${i + 1} must match one of its options!`;
+      if (
+        !normalizedOptions.includes(
+          question.correctAnswer.trim().toLowerCase()
+        )
+      ) {
+        return `Correct answer for Question ${i + 1} must match one of its options!`;
       }
     }
 
@@ -163,7 +207,6 @@ export default function CreateAssignment() {
   };
 
   // NAVIGATION AFTER PUBLISH
-
   const goBackToTeacherUnit = () => {
     if (subject === "cpp") {
       navigate(`/teacher/cpp/unit${unit}`);
@@ -178,8 +221,7 @@ export default function CreateAssignment() {
     navigate(`/teacher/${subject}/unit/${unit}`);
   };
 
-  // SUBMIT ASSIGNMENT
-
+  // PUBLISH ASSIGNMENT
   const handleSubmit = async (event) => {
     event.preventDefault();
     setMsg("");
@@ -201,10 +243,13 @@ export default function CreateAssignment() {
         title: title.trim(),
         description: description.trim(),
         deadline,
+        durationMinutes: Number(durationMinutes),
 
         questions: questions.map((question) => ({
           questionText: question.questionText.trim(),
-          options: question.options.map((option) => option.trim()),
+          options: question.options.map((option) =>
+            option.trim()
+          ),
           correctAnswer: question.correctAnswer.trim(),
         })),
 
@@ -238,23 +283,21 @@ export default function CreateAssignment() {
     }
   };
 
-  // UI
-
   return (
     <div className="unit-page">
       <div className="unit-header">
         <h2>🧩 Create {languageLabel} MCQ Assignment</h2>
-
         <p>
-          Create an objective assignment for {languageLabel}, Unit {unit}.
+          Create an objective assignment for {languageLabel},
+          Unit {unit}.
         </p>
       </div>
 
       <div className="section">
         <div className="form-wrapper">
           <form className="modern-form" onSubmit={handleSubmit}>
-            {/* UNIT AND SECTION */}
 
+            {/* UNIT AND SECTION */}
             <div style={{ display: "flex", gap: "10px" }}>
               <select
                 className="modern-input"
@@ -263,10 +306,11 @@ export default function CreateAssignment() {
                   setUnit(Number(event.target.value))
                 }
               >
-                <option value={1}>Unit 1</option>
-                <option value={2}>Unit 2</option>
-                <option value={3}>Unit 3</option>
-                <option value={4}>Unit 4</option>
+                {[1, 2, 3, 4].map((number) => (
+                  <option key={number} value={number}>
+                    Unit {number}
+                  </option>
+                ))}
               </select>
 
               <select
@@ -287,7 +331,6 @@ export default function CreateAssignment() {
             </div>
 
             {/* ASSIGNMENT TITLE */}
-
             <input
               className="modern-input"
               type="text"
@@ -299,7 +342,7 @@ export default function CreateAssignment() {
             />
 
             {/* DEADLINE */}
-
+            <label>Assignment Deadline</label>
             <input
               className="modern-input"
               type="datetime-local"
@@ -309,22 +352,122 @@ export default function CreateAssignment() {
               }
             />
 
-            {/* DESCRIPTION */}
+            {/* QUIZ TIMER */}
+            <div
+              style={{
+                background: "#f0f5f0",
+                padding: "18px",
+                borderRadius: "12px",
+                margin: "12px 0",
+              }}
+            >
+              <label
+                style={{
+                  display: "block",
+                  fontWeight: "700",
+                  marginBottom: "8px",
+                }}
+              >
+                ⏱️ Quiz Duration (Minutes)
+              </label>
 
+              <input
+                className="modern-input"
+                type="number"
+                min="1"
+                max="180"
+                value={durationMinutes}
+                onChange={(event) =>
+                  setDurationMinutes(event.target.value)
+                }
+                required
+              />
+
+              <small style={{ color: "#526452" }}>
+                Students will get this much time after starting
+                the quiz. Maximum 180 minutes.
+              </small>
+            </div>
+
+            {/* DESCRIPTION */}
             <textarea
               className="modern-input"
-              placeholder="Description"
+              placeholder="Assignment Description"
               value={description}
               onChange={(event) =>
                 setDescription(event.target.value)
               }
             />
 
-            {/* MCQ QUESTIONS */}
+            {/* QUESTION COUNT */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                margin: "20px 0",
+                flexWrap: "wrap",
+                gap: "10px",
+              }}
+            >
+              <h3>📝 MCQ Questions ({questions.length})</h3>
 
+              <button
+                type="button"
+                onClick={addQuestion}
+                style={{
+                  background: "#183c35",
+                  color: "#fff",
+                  border: "none",
+                  borderRadius: "8px",
+                  padding: "10px 16px",
+                  cursor: "pointer",
+                  fontWeight: "600",
+                }}
+              >
+                + Add Question
+              </button>
+            </div>
+
+            {/* DYNAMIC QUESTIONS */}
             {questions.map((question, index) => (
-              <div key={index} className="question-block">
-                <h3>Question {index + 1}</h3>
+              <div
+                key={index}
+                className="question-block"
+                style={{
+                  border: "1px solid #dce5dc",
+                  borderRadius: "12px",
+                  padding: "18px",
+                  marginBottom: "18px",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    gap: "10px",
+                  }}
+                >
+                  <h3>Question {index + 1}</h3>
+
+                  <button
+                    type="button"
+                    onClick={() => removeQuestion(index)}
+                    disabled={questions.length === 1}
+                    style={{
+                      background: "#b93838",
+                      color: "#fff",
+                      border: "none",
+                      borderRadius: "7px",
+                      padding: "8px 12px",
+                      cursor: "pointer",
+                      opacity: questions.length === 1 ? 0.4 : 1,
+                    }}
+                  >
+                    Remove
+                  </button>
+                </div>
 
                 <textarea
                   className="modern-input"
@@ -339,13 +482,14 @@ export default function CreateAssignment() {
                 />
 
                 {/* FOUR OPTIONS */}
-
                 <div className="options-grid">
                   {question.options.map((option, optionIndex) => (
                     <input
                       key={optionIndex}
                       className="modern-input"
-                      placeholder={`Option ${optionIndex + 1}`}
+                      placeholder={`Option ${String.fromCharCode(
+                        65 + optionIndex
+                      )}`}
                       value={option}
                       onChange={(event) =>
                         handleOptionChange(
@@ -359,10 +503,18 @@ export default function CreateAssignment() {
                 </div>
 
                 {/* CORRECT ANSWER */}
+                <label
+                  style={{
+                    display: "block",
+                    marginTop: "12px",
+                    fontWeight: "600",
+                  }}
+                >
+                  Select Correct Answer
+                </label>
 
-                <input
+                <select
                   className="modern-input"
-                  placeholder="Enter Correct Answer (must match an option)"
                   value={question.correctAnswer}
                   onChange={(event) =>
                     handleCorrectAnswerChange(
@@ -370,12 +522,43 @@ export default function CreateAssignment() {
                       event.target.value
                     )
                   }
-                />
+                >
+                  <option value="">Choose correct option</option>
+
+                  {question.options.map((option, optionIndex) => (
+                    <option
+                      key={optionIndex}
+                      value={option}
+                      disabled={!option.trim()}
+                    >
+                      {String.fromCharCode(65 + optionIndex)}:{" "}
+                      {option || `Option ${optionIndex + 1}`}
+                    </option>
+                  ))}
+                </select>
               </div>
             ))}
 
-            {/* PUBLISH */}
+            {/* ADD QUESTION BUTTON */}
+            <button
+              type="button"
+              onClick={addQuestion}
+              style={{
+                width: "100%",
+                padding: "13px",
+                marginBottom: "20px",
+                background: "#e8f0e7",
+                color: "#183c35",
+                border: "1px dashed #78927a",
+                borderRadius: "9px",
+                fontWeight: "700",
+                cursor: "pointer",
+              }}
+            >
+              + Add Another Question
+            </button>
 
+            {/* PUBLISH */}
             <button
               className="submit-btn"
               type="submit"
